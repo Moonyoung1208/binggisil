@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+main{
+    position: relative;
+}
+/*
+
+    input[type=checkbox]{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        position: absolute;
+        right: 20px;
+       bottom: 15px;
+
+    }
+.popup form{
+    padding:15px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+*/
+
+    .popup{
+        border: 1px solid #dbdbdb;
+        background-color: #fff;
+    }
+
+    .popupwrap{
+        margin: auto;
+        position: absolute;
+        z-index: 500;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+.popupwrap .popup{
+    display: inline-block;
+    vertical-align: top;
+}
+.popup img{
+    width: 550px;
+}
+
+.btn{
+    display: flex;
+    font-size: 0;
+}
+.btn a{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* vertical-align: middle; */
+    width: 50%;
+    padding: 20px;
+    font-size: 17px;
+    text-align: center;
+        border-right: 1px solid #dbdbdb;  
+    border-top: 1px solid #dbdbdb;
+}
+.btn a:last-child{
+   border-right: none; 
+}
+@media screen and (max-width:1270px){
+        /* .popupwrap{
+        margin: auto;
+        position: absolute;
+        z-index: 100000;
+        left: 50px;
+        top: 5%;
+    } */
+}
+
+@media screen and (max-width:1158px) {
+    .popup img{
+        width: 450px;
+   overflow-y: scroll;
+    }
+    .btn a{
+    font-size: 15px;
+            padding: 15px;
+}
+
+        /* .popupwrap{
+        margin: auto;
+        position: absolute;
+        z-index: 100000;
+        left: 0px;
+        top: 5%;
+    } */
+}
+
+
+
+@media screen and (max-width:992px) {
+
+        .popup{
+            margin-top: 0px;
+            overflow-y: scroll;
+
+    }
+    .popup img{
+        width:100%;
+      overflow-y: scroll;
+    }
+    .btn a{
+    font-size: 15px;
+            padding: 15px;
+}
+
+        /* .popupwrap{
+        margin: auto;
+        position: absolute;
+        z-index: 100000;
+        left: 150px;
+        top: 5%;
+    } */
+
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    .popup img{
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .btn a{
+    font-size: 15px;
+            padding: 15px;
+}
+        /* .popupwrap{
+        left: 0px;
+        top:0%;
+    } */
+
+}
+
+@media screen and (max-width:680px) {
+    .popupwrap{
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width:425px) {
+        .popup{
+            margin-top: 0px;
+            overflow-y: scroll;
+    }
+    .popup img{
+        width: 100%;
+                    overflow-y: scroll;
+    }
+    .btn a{
+    font-size: 15px;
+            padding: 15px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,322 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+<body>
+<!-- header -->
+<? include "../header.html"?>
+<!-- //header -->
+
+<div class="sub">
+    <div class="sub-wrap">
+        <div class="sub-text-box">
+            <p>다양한 체험과 연계된 숙박시설!</p>
+            <h1>빙기실치유마을</h1>
+        </div>
+
+    </div>
+    <div class="sub-address">
+        <ul class="address-wrap">
+            <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+            <li><a href="javascript:void(0)" class="menu">이용안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                    <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                    <li><a href="../sub04/reservation.html">예약안내</a></li>
+                    <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                    <li><a href="../sub06/farm.html">농산물안내</a></li>
+                    <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu border-none">이용안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="time.html">이용시간</a></li>
+                    <li><a href="price.html">이용요금</a></li>
+                    <li><a href="step.html">이용준수사항</a></li>
+                    <li><a href="inquiry.html">안내 및 문의전화</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub-main">
+    <div class="sub-main-wrap">
+        <div class="sub-main-left">
+            <div class="sub-main-nav">
+                <p class="sub-nav-title">
+                    이용안내
+                </p>
+                <ul>
+                    <li><a href="information.html" class="point">이용안내<i class="xi-angle-right"></i></a></li>
+                    <li><a href="time.html">이용시간<i class="xi-angle-right"></i></a></li>
+                    <li><a href="price.html">이용요금<i class="xi-angle-right"></i></a></li>
+                    <li><a href="step.html">이용준수사항<i class="xi-angle-right"></i></a></li>
+                    <li><a href="inquiry.html">안내 및 문의전화<i class="xi-angle-right"></i></a></li>
+                </ul>
+            </div>
+            <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                <span>온라인예약</span>
+                온라인 예약을<br>
+                하실 수 있습니다!
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
+        
+        <div class="sub_contents">
+            <div class="title-text">
+                <h1>이용안내</h1>
+                <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+            </div>
+
+            <div class="sub-con">
+                <div class="sub-section-title">
+                    <img src="../img/icon/tent.png" alt="">
+                    <h3>이용안내</h3>
+                    <p>
+                        예약 시, 이용안내에 대하여 상세하게 안내해드립니다.<br>
+                        문의사항이 있으시면 홈페이지 내 묻고답하기 게시판에 문의글을 남겨주시면 빠르게 답변해드리겠습니다.
+                    </p>
+                </div>
+
+                <div class="step" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../img/icon/camp.png" alt="" class="camp-logo">예약절차안내</p>
+                    <div class="step-img">
+                        <img src="../img/sub/step01-1.png" alt="">
+                        <img src="../img/sub/step02.png" alt="">
+                        <img src="../img/sub/step03.png" alt="">
+                        <img src="../img/sub/step04.png" alt="">
+                        <img src="../img/sub/step05.png" alt="">
+                    </div>
+                </div>
+
+                <div class="camp01-more-box" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../img/icon/camp.png" alt="" class="camp-logo">예약 전 안내</p>
+                    <div class="camp01-more">
+                        <img src="../img/icon/web-icon.png" alt="집 아이콘" style="width: 100px;">
+                        <ul>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 예약은 선착순으로 진행되며, 예약 가능 인원은 제한되어 있습니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 예약은 '캠핏' 플랫폼을 통해 예약이 가능합니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 1일 이용시간은 당일 14시 ~ 익일 11시 기준입니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 중학생, 고등학생 등 청소년이 보호자를 동반하지 않은 채 사용하는 것은 허가되지 않습니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 애완견 동반 가능합니다. (단, 숙소 내에 애완견 반입 금지)</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 빙기실마을 입구의 사무실(빙기실마트)에서 자세한 안내를 받으실 수 있으며, 기타 문의 사항은 010-9977-4096으로 연락 주시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="camp01-more-box" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../img/icon/camp.png" alt="" class="camp-logo">입·퇴실 안내</p>
+                    <div class="camp01-more">
+                        <img src="../img/icon/time.png" alt="집 아이콘" style="width: 100px;">
+                        <ul>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 입실 : 당일 오후 2시 ~ 9시 전까지</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 퇴실 : 오전 11시 까지</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="xi-minus-min" style="margin-right: 5px;"></i> 퇴실시간은 연장이 불가능합니다. (단, 다음 예약자가 없을 경우 오후 2시까지 이용이 가능합니다.)</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="xi-minus-min" style="margin-right: 5px;"></i> 퇴실 전 다음 고객분을 위하여 쓰레기 분리수거는 꼭 부탁드립니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p>사정상 <span>입실 시간이 지연</span>될 경우 반드시 <span>사전에 빙기실치유마을 관리실(054-730-6611)로 연락</span>바랍니다. </p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 입실객들은 상호간의 편의를 위하여 규정시간을 엄수하여 주시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="price-table">
+                    <div class="table02">
+                        <table style="margin-top: 50px;">
+                            <thead>
+                                <caption><img src="../img/icon/camp.png" alt="" class="camp-logo">이용요금안내</caption>
+                                <tr>
+                                    <th rowspan="3" colspan="2">시설명</th>
+                                    <th rowspan="3">갯수</th>
+                                    <th colspan="6">이용요금</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">비수기</th>
+                                    <th colspan="2">성수기</th>
+                                    <th colspan="2">극성수기</th>
+                                </tr>
+                                <tr>
+                                    <th>주중</th>
+                                    <th>주말</th>
+                                    <th>주중</th>
+                                    <th>주말</th>
+                                    <th>주중</th>
+                                    <th>주말</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">펜션</td>
+                                    <td>병곡방</td>
+                                    <td>1개</td>
+                                    <td>150,000</td>
+                                    <td>150,000</td>
+                                    <td>200,000</td>
+                                    <td>200,000</td>
+                                    <td>200,000</td>
+                                    <td>250,000</td>
+                                </tr>
+                                <tr>
+                                    <td>목방</td>
+                                    <td>1개</td>
+                                    <td>150,000</td>
+                                    <td>150,000</td>
+                                    <td>150,000</td>
+                                    <td>200,000</td>
+                                    <td>200,000</td>
+                                    <td>200,000</td>
+                                </tr>
+                                <tr>
+                                    <td>방기실방</td>
+                                    <td>1개</td>
+                                    <td>200,000</td>
+                                    <td>200,000</td>
+                                    <td>250,000</td>
+                                    <td>250,000</td>
+                                    <td>300,000</td>
+                                    <td>300,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">민박</td>
+                                    <td>3인실</td>
+                                    <td>2개</td>
+                                    <td>35,000</td>
+                                    <td>35,000</td>
+                                    <td>35,000</td>
+                                    <td>35,000</td>
+                                    <td>35,000</td>
+                                    <td>35,000</td>
+                                </tr>
+                                <tr>
+                                    <td>4~5인실</td>
+                                    <td>4개</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td>10~12인실</td>
+                                    <td>1개</td>
+                                    <td>110,000</td>
+                                    <td>110,000</td>
+                                    <td>110,000</td>
+                                    <td>110,000</td>
+                                    <td>110,000</td>
+                                    <td>110,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">캠핑장</td>
+                                    <td>캠핑존A특</td>
+                                    <td>파쇄석 9개 <br> 파쇄석 2개</td>
+                                    <td>40,000</td>
+                                    <td>45,000</td>
+                                    <td>50,000</td>
+                                    <td>50,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td>캠핑존A일</td>
+                                    <td>파쇄석 5개</td>
+                                    <td>30,000</td>
+                                    <td>35,000</td>
+                                    <td>40,000</td>
+                                    <td>45,000</td>
+                                    <td>45,000</td>
+                                    <td>45,000</td>
+                                </tr>
+                                <tr>
+                                    <td>캠핑존B특</td>
+                                    <td>데크 및 파쇄석 혼용 7개</td>
+                                    <td>40,000</td>
+                                    <td>45,000</td>
+                                    <td>50,000</td>
+                                    <td>50,000</td>
+                                    <td>55,000</td>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td>캠핑존B일</td>
+                                    <td>파쇄석 12개</td>
+                                    <td>30,000</td>
+                                    <td>35,000</td>
+                                    <td>40,000</td>
+                                    <td>40,000</td>
+                                    <td>45,000</td>
+                                    <td>45,000</td>
+                                </tr>
+                                <tr>
+                                    <td>예비 사이트</td>
+                                    <td>데크 및 파쇄석 혼용 3개 <br> 파쇄석 1개</td>
+                                    <td>30,000</td>
+                                    <td>35,000</td>
+                                    <td>40,000</td>
+                                    <td>40,000</td>
+                                    <td>45,000</td>
+                                    <td>45,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="camp01-more-box" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../img/icon/camp.png" alt="" class="camp-logo">이용시 주의사항</p>
+                    <div class="camp01-more" style="border-color: #f00;">
+                        <img src="../img/icon/notice.png" alt="집 아이콘" style="width: 100px;">
+                        <ul>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p><snap>시설소개 페이지를 꼭 참고</snap>하셔서 이용에 불편함 없으시길 바랍니다.</p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p>달빛고운병곡캠핑장 숙박시설 사용예약은 <span>2개월 전 매월 25일부터</span> 홈페이지 "캠핏" 플랫폼에서 실시간 예약이 가능합니다.</p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p>결제방식은 예약정보 내에서 <span>전자결제를 통한 카드결제, 계좌이체, 무통장입금(가상계좌)만 가능</span>합니다.</p> </li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="xi-minus-min" style="margin-right: 5px;"></i><p><span>추가 및 환불(현금결제)은 관리자와 상의해주세요.</span></p> </li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p>예약시간으로부터 <span>24시간 이내 결제</span>하시지 않으면 <span>예약이 자동취소</span>됩니다. (단, 이용 전일과 이용당일 예약의 경우 입금대기 시간은 1시간입니다.) </p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <p><span>예약일자 및 예약정보는 관리자와 유선 통화로 수정가능합니다. (010-9977-4096)</span></p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 음식의 조리 불 사용은 지정된 곳에서만 할 수 있습니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 캠프장 이용객 안전보호 및 효율적인 관리를 위하여 원동기 장착용구 [일명 사발이(ATV), 스쿠터, 킥보드 등]의 출입제한 및 금지함을 알려드립니다.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 위급을 요하는 경우와 후오, 강풍 등으로 피난이 필요한 경우 관리자의 지시에 따라 주시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- quick -->
+<? include "../quick.html"?>
+<!-- //quick -->
+<!-- footer -->
+<? include "../footer.html"?>
+<!-- //footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/sub.js"></script>
+</body>
+</html>

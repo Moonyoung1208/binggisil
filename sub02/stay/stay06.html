@@ -1,0 +1,216 @@
+<?php
+	include_once('../../gb/common.php');
+    include_once('../../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+
+    <link rel="stylesheet" href="../../css/sub.css">
+    <link rel="stylesheet" href="../../css/sub02/sub02.css">
+    <link rel="stylesheet" href="../../css/sub02/camping01.css">
+    <link rel="stylesheet" href="../../css/sub02/room.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+<body>
+<!-- header -->
+<? include "../../header.html"?>
+<!-- //header -->
+
+<div class="sub">
+    <div class="sub-wrap">
+        <div class="sub-text-box">
+            <p>다양한 체험과 연계된 숙박시설!</p>
+            <h1>빙기실치유마을</h1>
+        </div>
+
+    </div>
+    <div class="sub-address">
+        <ul class="address-wrap">
+            <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+            <li><a href="javascript:void(0)" class="menu">달빛고운 병곡 캠핑장 소개</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                    <li><a href="../../sub03/information.html">이용안내</a></li>
+                    <li><a href="../../sub04/reservation.html">예약안내</a></li>
+                    <li><a href="../../sub05/cure/cure.html">체험안내</a></li>
+                    <li><a href="../../sub06/farm.html">농산물안내</a></li>
+                    <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu border-none">시설별안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../camping01.html">시설배치도</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub-main">
+    <div class="sub-main-wrap">
+        <div class="sub-main-left">
+            <div class="sub-main-nav">
+                <p class="sub-nav-title">
+                    달빛고운 병곡 캠핑장
+                </p>
+                <ul class="pc-nav">
+                    <li><a href="../camping01.html">시설배치도<i class="xi-angle-right"></i></a></li>
+                    <li><a href="stay01.html" class="point">시설별안내<i class="xi-angle-right"></i></a>
+                        <ul class="address-wrap-sub-num">
+                            <li><a href="stay01.html" class="point02">달빛고운 병곡 숙박</a></li>
+                            <li><a href="../camp/camp01.html">달빛고운 병곡 캠핑장</a></li>
+                            <!-- <li><a href="">달빛고운 병곡 부대시설</a></li> -->
+                        </ul>
+                    </li>
+                </ul>
+                <div class="mobile-nav">
+                    <ul class="address-wrap-sub-num">
+                        <li><a href="stay01.html" class="point02">달빛고운 병곡 숙박</a></li>
+                        <li><a href="../camp/camp01.html">달빛고운 병곡 캠핑장</a></li>
+                        <!-- <li><a href="">달빛고운 병곡 부대시설</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                <span>온라인예약</span>
+                온라인 예약을<br>
+                하실 수 있습니다!
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
+        
+        <div class="sub_contents">
+            <div class="title-text">
+                <h1>달빛고운 병곡 숙박</h1>
+                <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+            </div>
+
+            <div class="more-btn">
+                <div class="more-btn-wrap">
+                    <ul>
+                        <li><a href="../camp/camp01.html" style="background-color: rgba(22, 104, 86, 0.699) !important; color: #fff !important;">캠핑장 바로가기</a></li>
+                        <li><a href="stay01.html">병곡방</a></li>
+                        <li><a href="stay02.html">목방</a></li>
+                        <li><a href="stay03.html">빙기실방</a></li>
+                        <li><a href="stay04.html">3인실</a></li>
+                        <li><a href="stay05.html">4~5인실</a></li>
+                        <li><a href="stay06.html" class="point-btn">10~12인실</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-con">
+                <div class="main">
+                    <div class="main-left">
+                        <h1>10~12인실</h1>
+                        <p>
+                            달빛고운 병곡 숙박 시설은 <br>
+                            10~12인실 숙박시설입니다.
+                        </p>
+                        <dl>
+                            <dt><img src="../../img/icon/city-icon.png" alt=""></dt>
+                            <dd>시설 : 민박</dd>
+                        </dl>
+                        <dl>
+                            <dt><img src="../../img/icon/number-icon.png" alt=""></dt>
+                            <dd>인원 : 기준 10~12인</dd>
+                        </dl>
+                    </div>
+                    <div class="main-right rightBg04">
+                        <!-- <img src="../../img/room/stay01/stay01-1.jpg" alt=""> -->
+                    </div>
+                </div>
+
+                <div class="camp01-more-box" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../../img/icon/camp.png" alt="" class="camp-logo">객실상세정보</p>
+                    <div class="camp01-more">
+                        <img src="../../img/icon/camp02.png" alt="집 아이콘">
+                        <ul>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 객실 : 온돌방, 에어컨 </li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 공동 주방 : 냉장고 전기솥밥, 전자레인지, 밥그릇 등 식기일체, 조리기구일체, 밥상 식탁, 수저 등 주방도구 일체</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 공동 화장실 및 내부 화장실</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 마당 테이블, 바베큐장 그릴 제공</li>
+                            <li style="color: #f00;"><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 타올, 면도기 등 개인위생도구는 챙겨오세요.</li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 펜션과 민박은 애완동물 동반이 되지 않습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="photo-wrap">
+                    <p>시설사진</p>
+                    <ul class="room-photo">
+                        <li><img src="../../img/room/stay05/stay05-15.jpg" alt=""><p>민박 전경</p></li>
+                        <!-- <li><img src="../../img/room/stay06/stay06-10.jpg" alt=""><p>6, 7번방 입구</p></li> -->
+                        <li><img src="../../img/room/stay06/stay06-1.JPG" alt=""><p>10~12인실 민박 내부</p></li>
+                        <li><img src="../../img/room/stay06/stay06-2.JPG" alt=""><p>10~12인실 민박 내부</p></li>
+                        <!-- <li><img src="../../img/room/stay06/stay06-3.JPG" alt=""><p>10~12인실 민박 내부</p></li> -->
+                        <!-- <li><img src="../../img/room/stay06/stay06-7.jpg" alt=""><p>10~12인실 민박 내부</p></li> -->
+                        <!-- <li><img src="../../img/room/stay06/stay06-8.jpg" alt=""><p>10~12인실 민박 내부</p></li> -->
+                        <!-- <li><img src="../../img/room/stay06/stay06-9.jpg" alt=""><p>10~12인실 민박 내부</p></li> -->
+                        <li><img src="../../img/room/stay06/stay06-6.jpg" alt=""><p>10~12인실 민박 내부</p></li>
+                        <li><img src="../../img/room/stay05/stay05-6.JPG" alt=""><p>빙기실 민박 공용화장실(1, 4, 5번방)</p></li>
+                        <!-- <li><img src="../../img/room/stay05/stay05-5.jpg" alt=""><p>빙기실 민박 공용화장실(2번방)</p></li> -->
+                        <!-- <li><img src="../../img/room/stay05/stay05-4.JPG" alt=""><p>빙기실 민박 공용화장실(3번방)</p></li> -->
+                        <li><img src="../../img/room/stay05/stay05-17.jpg" alt=""><p>빙기실 민박 공용화장실(6, 7번방)</p></li>
+                        <li><img src="../../img/room/stay04/stay04-7.jpg" alt=""><p>빙기실 민박 공동 주방</p></li>
+                        <!-- <li><img src="../../img/room/stay04/stay04-8.JPG" alt=""><p>빙기실 민박 공동 주방</p></li> -->
+                        <!-- <li><img src="../../img/room/stay04/stay04-14.jpg" alt=""><p>빙기실 민박 공동 주방</p></li> -->
+                        <li><img src="../../img/room/stay04/stay04-13.jpg" alt=""><p>빙기실 민박 공동 주방</p></li>
+                        <!-- <li><img src="../../img/room/stay05/stay05-13.JPG" alt=""><p>빙기실 민박 공동 바베큐</p></li> -->
+                        <!-- <li><img src="../../img/room/stay04/stay04-4.jpg" alt=""><p>빙기실 민박 공동 바베큐</p></li> -->
+                        <li><img src="../../img/room/stay04/stay04-5.JPG" alt=""><p>빙기실 민박 공동 바베큐</p></li>
+                        <!-- <li><img src="../../img/room/stay04/stay04-11.jpg" alt=""><p>빙기실 민박 공동 바베큐</p></li> -->
+                        <li><img src="../../img/room/stay04/stay04-6.jpg" alt=""><p>빙기실 민박 공동 방갈로</p></li>
+                        <li><img src="../../img/room/stay04/stay04-12.jpg" alt=""><p>빙기실 민박 공동 방갈로</p></li>
+
+                    </ul>
+                </div>
+
+                <div class="camp01-more-box" style="margin-top: 50px;">
+                    <p class="text-title"><img src="../../img/icon/camp.png" alt="" class="camp-logo">이용 시 유의사항</p>
+                    <div class="camp01-more">
+                        <img src="../../img/icon/notice.png" alt="집 아이콘">
+                        <ul>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p><span>시설소개 페이지를 꼭 참고</span>하셔서 이용에 불편 없으시길 바랍니다.</p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p>결제방식은 예약정보 내에서 <span>전자결제를 통한 카드결제, 계좌이체, 무통장입금(가상계좌)만 가능</span>합니다 <br> <span> - 추가 금액 및 환불(현금결제)은 관리자와 상의해주세요.</span></p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p>예약시간으로부터 <span>24시간 이내</span> 결제하시지 않으면 <span>예약이 자동취소</span>됩니다. </p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p><span>예약일자 및 예약정보는 변경하실 수 없으며, 취소 후 재예약 하셔야 합니다.</span></p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p>음식의 조리 및 불 사용은 지정된 곳에서만 할 수 있습니다.</p></li>
+                            <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i><p>위급을 요한는 경우와 호우, 강풍 등으로 피난이 필요한경우 관리자의 지시에 따라 주시기 바랍니다.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- quick -->
+<? include "../../quick.html"?>
+<!-- //quick -->
+<!-- footer -->
+<? include "../../footer.html"?>
+<!-- //footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../js/sub.js"></script>
+</body>
+</html>

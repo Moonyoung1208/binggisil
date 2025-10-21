@@ -1,0 +1,149 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub01/sub01.css">
+    <link rel="stylesheet" href="../css/sub01/facilities.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+<!-- header -->
+<? include "../header.html"?>
+<!-- //header -->
+
+<div class="sub">
+    <div class="sub-wrap">
+        <div class="sub-text-box">
+            <p>다양한 체험과 연계된 숙박시설!</p>
+            <h1>빙기실치유마을</h1>
+        </div>
+
+    </div>
+    <div class="sub-address">
+        <ul class="address-wrap">
+            <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+            <li><a href="javascript:void(0)" class="menu">빙기실 치유마을 소개</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                    <li><a href="../sub03/information.html">이용안내</a></li>
+                    <li><a href="../sub04/reservation.html">예약안내</a></li>
+                    <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                    <li><a href="../sub06/farm.html">농산물안내</a></li>
+                    <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu border-none">빙기실 치유마을 부대시설</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="intro.html">빙기실 치유마을 소개</a></li>
+                    <li><a href="directions.html">위치 및 교통정보</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub-main">
+    <div class="sub-main-wrap">
+        <div class="sub-main-left">
+            <div class="sub-main-nav">
+                <p class="sub-nav-title">
+                    빙기실 치유마을 소개
+                </p>
+                <ul>
+                    <li><a href="intro.html">빙기실 치유마을 소개<i class="xi-angle-right"></i></a></li>
+                    <li><a href="facilities.html" class="point">빙기실 치유마을 부대시설<i class="xi-angle-right"></i></a></li>
+                    <li><a href="directions.html">위치 및 교통정보<i class="xi-angle-right"></i></a></li>
+                </ul>
+            </div>
+            <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                <span>온라인예약</span>
+                온라인 예약을<br>
+                하실 수 있습니다!
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
+        
+        <div class="sub_contents">
+            <div class="title-text">
+                <h1>빙기실 치유마을 부대시설</h1>
+                <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+            </div>
+
+            <div class="sub-con">
+                <div class="sub-grid">
+                    <div class="grid-box">
+                        <p><span><b>숲속 도서관</b></span> 숲속에서 읽는 책 한 권</p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities01.png" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>빙기실 마트</b></span> 캠핑용품ㆍ장작ㆍ주류ㆍ음료ㆍ아이스크림ㆍ얼음ㆍ등유 등 <br> 판매합니다.</p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities02.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>캠핑장 샤워동</b></b></span> 
+                            온수
+                            하절기 09:00 ~ 21:00 <br>
+                            동절기 09:00 ~ 11:00, 17:00 ~ 20:00
+                        </p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities03.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>다목적 체험관</b></span> 다양한 체험도 즐기고 놀이도 풍성하게 즐겨요.</p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities04.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>마을 전망대</b></span> 마을을 한눈에 내려다볼 수 있는 마을 전망대</p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities05.png" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>숲밧줄 체험장</b></span> 숲 속에서 자연을 가깝게 느낄 수 있는 놀이터</p>
+                        <div class="img-box">
+                            <img src="../img/sub/facilities06.jpg" alt="">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- quick -->
+<? include "../quick.html"?>
+<!-- //quick -->
+
+<!-- footer -->
+<? include "../footer.html"?>
+<!-- //footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/sub.js"></script>
+</body>
+</html>

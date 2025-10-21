@@ -1,0 +1,217 @@
+<?php
+	include_once('../../gb/common.php');
+    include_once('../../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+
+    <link rel="stylesheet" href="../../css/sub.css">
+    <link rel="stylesheet" href="../../css/sub02/sub02.css">
+    <link rel="stylesheet" href="../../css/sub02/room.css">
+    <link rel="stylesheet" href="../../css/sub05/cure.css">
+    <link rel="stylesheet" href="../../css/sub05/sub05.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">체험안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../../sub03/information.html">이용안내</a></li>
+                        <li><a href="../../sub04/reservation.html">예약안내</a></li>
+                        <li><a href="../../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">치유 프로그램</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../healing/healing.html">힐링 체험안내</a></li>
+                        <li><a href="../program.html">프로그램 신청안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        체험안내
+                    </p>
+                    <ul class="pc-nav">
+                        <li><a href="cure.html" class="point">치유프로그램<i class="xi-angle-right"></i></a>
+                            <ul class="address-wrap-sub-num">
+                                <li><a href="forest.html">힐링 숲 체험</a></li>
+                                <li><a href="spar.html">힐링 스파</a></li>
+                                <li><a href="woodworking.html">마음휴식 목공방</a></li>
+                                <li><a href="observatory.html" class="point02">마음치유 전망대</a></li>
+                                <li><a href="pyeonbaek.html">편백나무 찜질</a></li>
+                                <li><a href="aroma.html">아로마 족욕</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../healing/healing.html">힐링 체험안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="../program.html">프로그램 신청안내<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                    <div class="mobile-nav">
+                        <ul class="address-wrap-sub-num">
+                            <li><a href="forest.html">힐링 숲 체험</a></li>
+                            <li><a href="spar.html">힐링 스파</a></li>
+                            <li><a href="woodworking.html">마음휴식 목공방</a></li>
+                            <li><a href="observatory.html" class="point02">마음치유 전망대</a></li>
+                            <li><a href="pyeonbaek.html">편백나무 찜질</a></li>
+                            <li><a href="aroma.html">아로마 족욕</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>치유프로그램</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-wrap05">
+                    <div class="sub-con">
+                        <div class="main">
+                            <div class="main-left">
+                                <h1>마음치유 전망대</h1>
+                                <p>
+                                    마음치유 전망대는<br class="mobile"> 자연 경관을 감상하며<br class="mobile"> 심리적 안정을<br class="pc">
+                                    찾을 수 있는 공간입니다. 아름다운 풍경 속에서 명상, 요가<br>
+                                    또는 간단한 산책을 통해<br class="mobile"> 스트레스를 해소하고 <br>
+                                    마음을 다스릴 수 있습니다.<br class="mobile"> 힐링 프로그램을 통해 <br>
+                                    내면의 평화를 찾고,<br class="mobile"> 소중한 나만의 시간을 가질 수 있습니다.
+                                </p>
+                                <dl>
+                                    <dt>-</dt>
+                                    <dd>운영기간 : 상시</dd>
+                                </dl>
+                                <dl>
+                                    <dt>-</dt>
+                                    <dd>접수기간 : 상시</dd>
+                                </dl>
+                                <!-- <dl>
+                                <dt>-</dt>
+                                <dd>총 모집인원 : 20명</dd>
+                            </dl> -->
+                                <dl>
+                                    <dt>-</dt>
+                                    <dd>체험 대상 : 누구나</dd>
+                                </dl>
+                                <dl>
+                                    <dt>-</dt>
+                                    <dd>체험비 : 무료</dd>
+                                </dl>
+                                <dl>
+                                    <dt>-</dt>
+                                    <dd>문의 : 010-9977-4096</dd>
+                                </dl>
+                            </div>
+                            <div class="main-right c-rightBg04">
+                                <!-- <img src="../../img/room/stay01/stay01-1.jpg" alt=""> -->
+                            </div>
+                        </div>
+
+                        <div class="camp01-more-box" style="margin-top: 50px;">
+                            <p class="text-title"><img src="../../img/icon/camp.png" alt="" class="camp-logo">체험안내</p>
+                            <div class="camp01-more">
+                                <img src="../../img/icon/camp02.png" alt="집 아이콘">
+                                <ul>
+                                    <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 단체 체험프로그램은 셋트하
+                                        2개조 교대 체험 진행(2시간 소요)</li>
+                                    <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 캠핑장 및 숙박 손님 체험
+                                        프로그램은 현장 접수 체험 진행합니다.</li>
+                                    <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> 프로그램 시작 시간이 지나면
+                                        입장에 제한이 있을 수 있습니다.</li>
+                                    <li><i class="xi-angle-right-min" style="margin-right: 10px;"></i> <b>만 14세 미만은 신청이
+                                            불가하며, 법정대리인이 신청해 주시기 바랍니다.</b></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="photo-wrap">
+                            <p>시설사진</p>
+                            <ul class="room-photo">
+                                <li><img src="../../img/experience/observatory02.jpg" alt="">
+                                    <p>마음치유 전망대 01</p>
+                                </li>
+                                <li><img src="../../img/experience/observatory03.jpg" alt="">
+                                    <p>마음치유 전망대 02</p>
+                                </li>
+                                <li><img src="../../img/experience/observatory01.jpg" alt="">
+                                    <p>마음치유 전망대 앞</p>
+                                </li>
+                                <li><img src="../../img/experience/observatory04.jpg" alt="">
+                                    <p>마음치유 전망대 입구</p>
+                                </li>
+                                <!-- <li><img src="../../img/" alt=""><p>숲체험 전경</p></li>
+                            <li><img src="../../img/" alt=""><p>물마루 내부</p></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="back-btn">
+                        <a href="cure.html">목록으로</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- quick -->
+    <? include "../../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../../footer.html"?>
+    <!-- //footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/sub.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!-- quick -->
+<style>
+    body{
+        position: relative;
+    }
+    .quick-menu{
+        position: fixed;
+        right: 30px;
+        bottom: 50px;
+        z-index: 999;
+    }
+    .quick-menu a i{
+        font-size: 25px;
+    }
+    .quick-menu a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0px 0px 12px #adadad;
+    }
+    @media screen and (max-width:550px) {
+        .quick-menu a{
+            width: 45px;
+            height: 45px;
+        }
+        .quick-menu a i{
+            font-size: 22px;
+        }
+        .quick-menu{
+            right: 20px;
+        }
+    }
+ </style>
+ <ul class="quick-menu">
+    <li>
+        <a href="javascript:void(0)" class="scrollTop">
+            <i class="xi-arrow-up"></i>
+        </a>
+    </li>
+ </ul>
+<!-- //quick -->

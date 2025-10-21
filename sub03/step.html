@@ -1,0 +1,263 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub02/sub02.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+<body>
+<!-- header -->
+<? include "../header.html"?>
+<!-- //header -->
+
+<div class="sub">
+    <div class="sub-wrap">
+        <div class="sub-text-box">
+            <p>다양한 체험과 연계된 숙박시설!</p>
+            <h1>빙기실치유마을</h1>
+        </div>
+
+    </div>
+    <div class="sub-address">
+        <ul class="address-wrap">
+            <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+            <li><a href="javascript:void(0)" class="menu">이용안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                    <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                    <li><a href="../sub04/reservation.html">예약안내</a></li>
+                    <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                    <li><a href="../sub06/farm.html">농산물안내</a></li>
+                    <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu border-none">이용준수사항</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="information.html">이용안내</a></li>
+                    <li><a href="time.html">이용시간</a></li>
+                    <li><a href="price.html">이용요금</a></li>
+                    <li><a href="inquiry.html">안내 및 문의전화</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub-main">
+    <div class="sub-main-wrap">
+        <div class="sub-main-left">
+            <div class="sub-main-nav">
+                <p class="sub-nav-title">
+                    이용안내
+                </p>
+                <ul>
+                    <li><a href="information.html">이용안내<i class="xi-angle-right"></i></a></li>
+                    <li><a href="time.html">이용시간<i class="xi-angle-right"></i></a></li>
+                    <li><a href="price.html">이용요금<i class="xi-angle-right"></i></a></li>
+                    <li><a href="step.html" class="point">이용준수사항<i class="xi-angle-right"></i></a></li>
+                    <li><a href="inquiry.html">안내 및 문의전화<i class="xi-angle-right"></i></a></li>
+                </ul>
+            </div>
+            <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                <span>온라인예약</span>
+                온라인 예약을<br>
+                하실 수 있습니다!
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
+        
+        <div class="sub_contents">
+            <div class="title-text">
+                <h1>이용준수사항</h1>
+                <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+            </div>
+
+            <div class="sub-con">
+                <div class="sub-section-title">
+                    <img src="../img/icon/bulb.png" alt="">
+                    <h3>이용준수사항</h3>
+                    <p>
+                        빙기실 치유마을 이용 시 반드시 준수하여야 할 사항을 소개합니다. <br>
+                        문의사항이 있으시면 홈페이지 내 묻고답하기 게시판에 문의글을 남겨주시면 빠르게 답변해드리겠습니다.
+                    </p>
+                </div>
+
+
+                <div class="step">
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat01.png" alt=""></dt>
+                        <dd>
+                            <h6>빙기실치유마을의 시설 사용 안내</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>시설의 종류(펜션,민박,캠핑장)에 따라 구조가 다릅니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>자세한 구조가 궁금하시다면 홈페이지 시설소개에서 확인하실 수 있습니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>피치는 배정된 곳을 사용하여야 하며, 항상 깨끗하게 관리되어야 합니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>지정된 장소(캐라반:그늘막, 캠프장)외에는 그늘막 및 텐트사용을 금합니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat02.png" alt=""></dt>
+                        <dd>
+                            <h6>미성년자 출입 및 이용</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>청소년보호법 제29조 3, 제29조 5 참조에 따라 보호자 또는 인솔자와 동반된 경우만 가능합니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat03.png" alt=""></dt>
+                        <dd>
+                            <h6>조리 가능여부</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>실내에서는 간단한 조리가 가능합니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>음식의 조리 및 불 사용은 지정된 곳에서만 할 수 있습니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>바베큐 이용시 관리실에 문의해주세요.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat04.png" alt=""></dt>
+                        <dd>
+                            <h6>동물(애완견) 동반 가능여부</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>애완견 동반 가능합니다.(단, 숙소내에 애완견 반입금지)</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>예약시 애완견 관련 사항을 확인해주세요.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat05.png" alt=""></dt>
+                        <dd>
+                            <h6>화재와 사고</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>캠프장내 불꽃놀이 체험은 관리자 통제하에 별도로 제공합니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>캠프장 이용객 안전보호 및 효율적인 관리를 위하여 원동기 장착용구 [일명 사발이(ATV),스쿠터, 킥보드 등]의 출입제한 및 금지함을 알려드립니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat06.png" alt=""></dt>
+                        <dd>
+                            <h6>분리수거 및 음식물 쓰레기 처리여부</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>폐수는 반드시 지정된 곳에 버려주시고 절대로 바닥에 버려서는 안됩니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>쓰레기는 지정된 장소에 종류별로 분류하여 내 놓으셔야 합니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat07.png" alt=""></dt>
+                        <dd>
+                            <h6>위생용품</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>침구류과 수건은 객실 인원에 맞추어 지급해드리며, 추가지원시 1인 5000원 요금이 부과됩니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>개인 위생도구(머리빗, 면도기 등)는 구비되어 있지 않으므로 이용자 본인이 직접 준비하셔야 합니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat08.png" alt=""></dt>
+                        <dd>
+                            <h6>인터넷 및 와이파이 가능여부</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>캠핑장 전지역 와이파이 프리존입니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat09.png" alt=""></dt>
+                        <dd>
+                            <h6>시설물의 양도나 양수</h6>
+                            <ul>
+                                <!-- <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>불가능합니다.</li> -->
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>캠핑 및 숙박시설 양도 양수 가능하며, 관리자와 유선으로 통보해 주셔야 합니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat10.png" alt=""></dt>
+                        <dd>
+                            <h6>유실 또는 피해</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>관리자는 이용자의 소유물에 대한 유실 또는 피해에 대하여 책임을 지지 않습니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>시설에 대한 피해에 대해서는 피해를 입힌 사람들에게 비용이 청구됩니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat11.png" alt=""></dt>
+                        <dd>
+                            <h6>소음</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>야간 매너 타임은 22:00부터 07:00까지입니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>심한 소음은 항상 주의하여야하며, 타인에게 피해를 끼치는 음주, 고성방가, 소란행위를 할 경우 퇴장조치가 이뤄질 수 있습니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat12.png" alt=""></dt>
+                        <dd>
+                            <h6>자동차</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>자동차의 출입은 가능한 23:00부터 07:00까지 삼가하여 주시기 바랍니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>장내에서의 차량통행은 서행이며, 불필요한 자동차 사용을 삼가하여 주시기 바랍니다.</li>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>캠프장 내에서 자동차를 세차할 수 없습니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="step-box">
+                        <dt><img src="../img/icon/chat13.png" alt=""></dt>
+                        <dd>
+                            <h6>긴급상태</h6>
+                            <ul>
+                                <li><i class="xi-angle-right-min" style="margin-right: 3px;"></i>위급을 요하는 경우와 호우, 강풍 등으로 피난이 필요한 경우 관리자의 지시에 따라 주시기 바랍니다.</li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+
+
+                </div>
+
+
+                
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- quick -->
+<? include "../quick.html"?>
+<!-- //quick -->
+<!-- footer -->
+<? include "../footer.html"?>
+<!-- //footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/sub.js"></script>
+</body>
+</html>

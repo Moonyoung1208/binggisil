@@ -1,0 +1,176 @@
+<?php
+	include_once('../../gb/common.php');
+    include_once('../../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+
+    <link rel="stylesheet" href="../../css/sub.css">
+    <!-- <link rel="stylesheet" href="../../css/sub01/sub01.css"> -->
+    <link rel="stylesheet" href="../../css/sub01/facilities.css">
+    <link rel="stylesheet" href="../../css/sub02/sub02.css">
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+<!-- header -->
+<? include "../../header.html"?>
+<!-- //header -->
+
+<div class="sub">
+    <div class="sub-wrap">
+        <div class="sub-text-box">
+            <p>다양한 체험과 연계된 숙박시설!</p>
+            <h1>빙기실치유마을</h1>
+        </div>
+
+    </div>
+    <div class="sub-address">
+        <ul class="address-wrap">
+            <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+            <li><a href="javascript:void(0)" class="menu">체험안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                    <li><a href="../../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                    <li><a href="../../sub03/information.html">이용안내</a></li>
+                    <li><a href="../../sub04/reservation.html">예약안내</a></li>
+                    <li><a href="../../sub06/farm.html">농산물안내</a></li>
+                    <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu border-none">힐링 체험안내</a>
+                <ul class="address-wrap-sub">
+                    <li><a href="../cure/cure.html">치유 프로그램</a></li>
+                    <li><a href="../program.html">프로그램 신청안내</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub-main">
+    <div class="sub-main-wrap">
+        <div class="sub-main-left">
+            <div class="sub-main-nav">
+                <p class="sub-nav-title">
+                    체험안내
+                </p>
+                <ul class="pc-nav">
+                    <li><a href="../cure/cure.html">치유프로그램<i class="xi-angle-right"></i></a></li>
+                    <li><a href="healing.html"  class="point">힐링 체험안내<i class="xi-angle-right"></i></a>
+                        <ul class="address-wrap-sub-num">
+                            <li><a href="healing.html" class="point02">힐링 프로그램</a></li>
+                            <li><a href="/gb/bbs/board.php?bo_table=gallery">힐링 갤러리</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../program.html">프로그램 신청안내<i class="xi-angle-right"></i></a></li>
+                </ul>
+                <div class="mobile-nav">
+                    <ul class="address-wrap-sub-num">
+                        <li><a href="healing.html" class="point02">힐링 프로그램</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=gallery">힐링 갤러리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                <span>온라인예약</span>
+                온라인 예약을<br>
+                하실 수 있습니다!
+                <i class="xi-angle-right"></i>
+            </a>
+        </div>
+        
+        <div class="sub_contents">
+            <div class="title-text">
+                <h1>힐링 프로그램</h1>
+                <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+            </div>
+
+            <div class="sub-con">
+                <div class="sub-grid">
+                    <div class="grid-box">
+                        <p><span><b>깡통열차타기</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>사과피자 만들기</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing02.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>짚라인/숲밧줄타기</b></b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing03.png" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>머그컵만들기</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing04.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>농촌체험</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing05.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>폭죽불꽃놀이</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing06.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>계곡/실내수영장 물놀이</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing07.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>트램플린타기(방방이)</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing08.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <p><span><b>미니페달보트타기</b></span></p>
+                        <div class="img-box">
+                            <img src="../../img/healing/healing09.png" alt="">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- quick -->
+<? include "../../quick.html"?>
+<!-- //quick -->
+<!-- footer -->
+<? include "../../footer.html"?>
+<!-- //footer -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+<script src="../../js/nav.js"></script>
+<script src="../../js/sub.js"></script>
+</body>
+</html>

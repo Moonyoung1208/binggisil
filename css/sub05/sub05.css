@@ -1,0 +1,68 @@
+
+
+
+.sub-wrap05 .main-left{
+    background-color: #c2d844 !important;
+    padding: 10px 30px;
+}
+.sub-wrap05 .main-left p{
+    margin: 15px 0 60px;
+    font-size: 18px;
+}
+.sub-wrap05 .main-left h1{
+    /* color: #f6eb8f; */
+    font-size: 40px;
+}
+.sub-wrap05 .main-left,.sub-wrap05 .main-right{
+    width: 50%;
+}
+.sub-wrap05 .c-rightBg01{
+    background-image: url(../../img/sub/eximg01.jpg);
+}
+.sub-wrap05 .c-rightBg02{
+    background-image: url(../../img/sub/eximg02.jpg);
+}
+.sub-wrap05 .c-rightBg03{
+    background-image: url(../../img/sub/eximg03.jpg);
+}
+.sub-wrap05 .c-rightBg04{
+    background-image: url(../../img/experience/observatory01.jpg);
+}
+.sub-wrap05 .c-rightBg05{
+    background-image: url(../../img/sub/eximg05.jpg);
+}
+.sub-wrap05 .c-rightBg06{
+    background-image: url(../../img/sub/eximg06.jpg);
+}
+@media screen and (max-width:860px) {
+    .sub-wrap05 .main-left, .sub-wrap05 .main-right{
+        width: 100%;
+    }
+    /* .sub-wrap05 .main-left dl{
+        justify-content: center;
+    } */
+    .sub-wrap05 .main-left h1{
+        font-size: 35px;
+    }
+    .sub-wrap05 .main-left p{
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+    .sub-wrap05 .main-left{
+        padding: 30px;
+    }
+}
+@media screen and (max-width:350px) {
+    .sub-wrap05 .main-left h1{
+        font-size: 30px;
+    }
+    .sub-wrap05 .main-left p{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+
+.step-box{
+    align-items: center;
+}

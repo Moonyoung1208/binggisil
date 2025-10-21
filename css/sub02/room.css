@@ -1,0 +1,199 @@
+/* main */
+.main{
+    width: 100%;
+    height: 500px;
+    background-color: #596176;
+    display: flex;
+    overflow: hidden;
+}
+.main-left{
+    width: 35%;
+    background-color: #6dc781;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+.main-left h1{
+    font-size: 50px;
+    /* color: #fff7ac !important; */
+}
+.main-left p{
+    margin: 15px 0 150px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.main-left dl{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.main-left dt{
+    width: 15px;
+}
+.main-left dd{
+    font-size: 18px;
+}
+.main-right{
+    width: 65%;
+}
+/* 시설 사진 */
+.main-right{
+    background-color: #6dc781;
+    background-image: url(../../img/room/stay01/stay01-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.rightBg02{
+    background-image: url(../../img/room/stay02/stay02-14.JPG);
+}
+.rightBg03{
+    background-image: url(../../img/room/stay03/stay03-00.JPG);
+}
+.rightBg04{
+    background-image: url(../../img/room/stay04/stay04-00.jpg);
+}
+.c-rightBg01{
+    background-image: url(../../img/room/camp01/camp01-1-1.JPG);
+}
+.c-rightBg01-2{
+    background-image: url(../../img/room/camp02/camp02-3.JPG);
+}
+.c-rightBg02{
+    background-image: url(../../img/room/camp03/camp03-11.JPG);
+}
+.c-rightBg02-1{
+    background-image: url(../../img/room/camp04/camo04-14.JPG);
+}
+.c-rightBg03{
+    background-image: url(../../img/room/camp05/camp05-2.jpg);
+}
+.photo-wrap{
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+.photo-wrap>p{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #596176;
+}
+.room-photo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 10px;
+}
+.room-photo p{
+    margin-top: 8px;
+    text-align: center;
+}
+.camp01-more>ul>li{
+    display: flex;
+}
+.camp01-more>ul>li>i{
+    margin-top: 4px;
+}
+@media screen and (max-width:1440px){
+    .main-left h1{
+        font-size: 40px;
+    }
+    .main-left p{
+        font-size: 20px;
+    }
+    .main-left dd{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:1280px) {
+    .main-left h1{
+        font-size: 35px;
+    }
+    .main-left p{
+        font-size: 18px;
+    }
+    .main-left dd{
+        font-size: 16px;
+    }
+    /* .camp01-more>ul>li{
+        display: block !important;
+    } */
+}
+@media screen and (max-width:1024px) {
+    .main-left h1{
+        font-size: 35px;
+    }
+    .main-left p{
+        font-size: 18px;
+    }
+    .main-left dd{
+        font-size: 16px;
+    }
+    .more-btn-wrap ul{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:860px) {
+    .main{
+        flex-direction: column-reverse;
+    }
+    .main-left{
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .main-right{
+        width: 100%;
+        height: 500px;
+    }
+    .main{
+        height: auto;
+    }
+    .main-left p{
+        margin: 10px 0;
+    }
+    .more-btn-wrap ul{
+        border-bottom: none;
+    }
+    .more-btn-wrap ul li a{
+        border-bottom: 1px solid #ccc;
+    }
+}
+@media screen and (max-width:550px) {
+    .room-photo{
+        grid-template-columns: 1fr;
+    }
+    .main-left h1{
+        font-size: 25px;
+    }
+    .main-left p{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .main-left dd{
+        font-size: 14px;
+    }
+    .more-btn-wrap ul{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .main-right{
+        width: 100%;
+        height: 350px;
+    }
+    .room-photo{
+        gap: 20px;
+    }
+}
+@media screen and (max-width:350px) {
+    .room-photo{
+        grid-template-columns: 1fr;
+    }
+    .more-btn-wrap ul{
+        grid-template-columns: 1fr 1fr;
+    }
+}
