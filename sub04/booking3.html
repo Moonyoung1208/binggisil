@@ -1,0 +1,253 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/reservation.css">
+    <link rel="stylesheet" href="../css/sub04/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../sub03/information.html">이용안내</a></li>
+                        <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                        <li><a href="../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="reservation.html">예약안내</a></li>
+                        <li><a href="booking.html">온라인 예약하기</a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        예약안내
+                    </p>
+                    <ul>
+                        <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="booking.html" class="point">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>온라인 예약하기</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-con">
+                    <!-- 예약 프로세스 -->
+                    <ul class="process">
+                        <li>1. 예약선택</li>
+                        <li>2. 약관동의</li>
+                        <li class="active">3. 예약정보입력</li>
+                        <li>4. 예약하기</li>
+                        <li>5. 결제하기</li>
+                    </ul>
+
+                    <!-- 예약정보입력 폼 -->
+                    <form id="bookingForm" method="POST" action="booking4.html">
+                        <div class="booking-info-container">
+                            <!-- 예약자 정보 섹션 -->
+                            <div class="info-section">
+                                <h2 class="section-title">예약자 정보</h2>
+                                
+                                <div class="form-group">
+                                    <label for="name">이름 <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">휴대폰 <span class="required">*</span></label>
+                                        <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">이메일 <span class="required">*</span></label>
+                                        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="password">비밀번호 <span class="required">*</span></label>
+                                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password-confirm">비밀번호 확인 <span class="required">*</span></label>
+                                        <input type="password" id="password-confirm" name="password-confirm" placeholder="비밀번호를 다시 입력하세요" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 추가 정보 섹션 -->
+                            <div class="info-section">
+                                <h2 class="section-title">추가 정보</h2>
+                                
+                                <div class="form-group">
+                                    <label for="special-request">특별 요청사항</label>
+                                    <textarea id="special-request" name="special-request" placeholder="특별히 요청하실 사항이 있으시면 입력해주세요" rows="5"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- 예약 정보 요약 -->
+                            <div class="booking-summary">
+                                <h2 class="summary-title">예약 정보 요약</h2>
+                                <div class="summary-content">
+                                    <div class="summary-item">
+                                        <span class="summary-label">체크인</span>
+                                        <span class="summary-value" id="summary-checkin">-</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">체크아웃</span>
+                                        <span class="summary-value" id="summary-checkout">-</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">숙소 종류</span>
+                                        <span class="summary-value" id="summary-room-type">-</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">인원</span>
+                                        <span class="summary-value" id="summary-guests">-</span>
+                                    </div>
+                                    <div class="summary-divider"></div>
+                                    <div class="summary-item price">
+                                        <span class="summary-label">예상 금액</span>
+                                        <span class="summary-value" id="summary-price">0원</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 버튼 -->
+                            <div class="shortcut-button">
+                                <a href="./booking2.html" class="btn-prev">이전 단계</a>
+                                <a href="./booking4.html" type="submit" class="btn-next" id="submitBtn">다음 단계</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- quick -->
+    <? include "../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../footer.html"?>
+    <!-- //footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 예약 정보 요약 업데이트
+            function updateSummary() {
+                const checkin = $('#checkin').val();
+                const checkout = $('#checkout').val();
+                const roomType = $('#room-type').val();
+                const guests = $('#guests').val();
+
+                $('#summary-checkin').text(checkin || '-');
+                $('#summary-checkout').text(checkout || '-');
+                $('#summary-room-type').text(roomType || '-');
+                $('#summary-guests').text(guests ? guests + '명' : '-');
+
+                // 금액 계산 (예시)
+                if (checkin && checkout) {
+                    const start = new Date(checkin);
+                    const end = new Date(checkout);
+                    const nights = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+                    const pricePerNight = 150000;
+                    const totalPrice = nights * pricePerNight;
+                    $('#summary-price').text(totalPrice.toLocaleString() + '원');
+                }
+            }
+
+            // 이벤트 리스너
+            $('#checkin, #checkout, #room-type, #guests').on('change', updateSummary);
+
+            // 폼 유효성 검사
+            $('#bookingForm').on('submit', function (e) {
+                const password = $('#password').val();
+                const passwordConfirm = $('#password-confirm').val();
+
+                if (password !== passwordConfirm) {
+                    e.preventDefault();
+                    alert('비밀번호가 일치하지 않습니다.');
+                    return false;
+                }
+
+                if (!$('#checkin').val() || !$('#checkout').val()) {
+                    e.preventDefault();
+                    alert('체크인과 체크아웃 날짜를 선택해주세요.');
+                    return false;
+                }
+            });
+
+            // 초기 요약 업데이트
+            updateSummary();
+        });
+    </script>
+</body>
+
+</html>

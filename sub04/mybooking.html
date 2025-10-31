@@ -1,0 +1,189 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/reservation.css">
+    <link rel="stylesheet" href="../css/sub04/mybooking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <a? include "../header.html" ?>
+        <!-- //header -->
+
+        <div class="sub">
+            <div class="sub-wrap">
+                <div class="sub-text-box">
+                    <p>다양한 체험과 연계된 숙박시설!</p>
+                    <h1>빙기실치유마을</h1>
+                </div>
+
+            </div>
+            <div class="sub-address">
+                <ul class="address-wrap">
+                    <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                    <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                        <ul class="address-wrap-sub">
+                            <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                            <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                            <li><a href="../sub03/information.html">이용안내</a></li>
+                            <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                            <li><a href="../sub06/farm.html">농산물안내</a></li>
+                            <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                        <ul class="address-wrap-sub">
+                            <li><a href="reservation.html">예약안내</a></li>
+                            <li><a href="booking.html">온라인 예약하기</a></li>
+                            <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sub-main">
+            <div class="sub-main-wrap">
+                <div class="sub-main-left">
+                    <div class="sub-main-nav">
+                        <p class="sub-nav-title">
+                            예약안내
+                        </p>
+                        <ul>
+                            <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                            <li><a href="booking.html">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                            <li><a href="mybooking.html" class="point">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                        </ul>
+                    </div>
+                    <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                        <span>온라인예약</span>
+                        온라인 예약을<br>
+                        하실 수 있습니다!
+                        <i class="xi-angle-right"></i>
+                    </a>
+                </div>
+
+                <div class="sub_contents">
+                    <div class="title-text">
+                        <h1>온라인 예약하기</h1>
+                        <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                        <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    </div>
+
+                    <div class="container">
+                        <!-- 검색 결과 섹션 -->
+                        <div class="search-results" id="searchResults">
+                            <div class="result-header">
+                                <h2 style="flex: 1; font-size: 18px; font-weight: 600;">조회 결과</h2>
+                            </div>
+
+                            <!-- 예약 카드 (동적 생성) -->
+                            <div id="bookingCardContainer"></div>
+                        </div>
+
+                        <!-- 검색 폼 섹션 -->
+                        <div class="search-form-section" id="searchFormSection">
+                            <div class="search-form-title">
+                                <i class="fas fa-search"></i>
+                                예약 정보 조회
+                            </div>
+                            <p class="search-form-subtitle">아래 정보를 입력하여 본인의 예약을 확인하세요.</p>
+
+                            <form id="searchForm">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        예약자명
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="reservationName" class="form-input" placeholder="예약자명을 입력하세요"
+                                        required>
+                                    <p class="form-help">정확한 이름을 입력해주세요.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        예약번호
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="reservationNumber" class="form-input"
+                                        placeholder="예: BK-2025-001234" required>
+                                    <p class="form-help">예약 완료 시 받은 예약번호를 입력하세요.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        휴대전화번호
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" id="reservationPhone" class="form-input"
+                                        placeholder="010-0000-0000" pattern="[0-9\-]+" required>
+                                    <p class="form-help">예약 시 입력한 휴대전화번호를 입력하세요.</p>
+                                </div>
+
+                                <div class="form-buttons">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-search"></i> 조회
+                                    </button>
+                                    <button type="reset" class="btn btn-secondary">
+                                        <i class="fas fa-redo"></i> 초기화
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 정보 안내 섹션 -->
+                        <div class="info-section">
+                            <div class="info-box">
+                                <div class="info-box-title">
+                                    <i class="fas fa-info-circle"></i>
+                                    조회 방법
+                                </div>
+                                <div class="info-box-content">
+                                    <ul>
+                                        <li>예약자명, 예약번호, 휴대전화번호를 정확하게 입력하세요.</li>
+                                        <li>예약 정보가 일치해야 조회 가능합니다.</li>
+                                        <li>정보를 잊으신 경우 고객센터로 문의해주세요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- quick -->
+        <? include "../quick.html"?>
+        <!-- //quick -->
+        <!-- footer -->
+        <? include "../footer.html"?>
+        <!-- //footer -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+        <script src="../js/nav.js"></script>
+        <script src="../js/sub.js"></script>
+</body>
+
+</html>

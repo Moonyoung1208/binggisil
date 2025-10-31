@@ -1,0 +1,339 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/reservation.css">
+    <link rel="stylesheet" href="../css/sub04/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../sub03/information.html">이용안내</a></li>
+                        <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                        <li><a href="../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="reservation.html">예약안내</a></li>
+                        <li><a href="booking.html">온라인 예약하기</a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        예약안내
+                    </p>
+                    <ul>
+                        <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="booking.html" class="point">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>온라인 예약하기</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-con">
+                    <ul class="process">
+                        <li>1. 예약선택</li>
+                        <li class="active">2. 약관동의</li>
+                        <li>3. 예약정보입력</li>
+                        <li>4. 예약하기</li>
+                        <li>5. 결제하기</li>
+                    </ul>
+
+                    <!-- 약관동의 섹션 -->
+                    <form id="termsForm" method="POST" action="booking3.html">
+                        <div class="terms-container">
+                            <!-- 전체 동의 -->
+                            <div class="terms-agree-all">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" id="agreeAll" name="agreeAll" class="checkbox-input">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">모든 약관에 동의합니다</span>
+                                </label>
+                            </div>
+
+                            <div class="terms-divider"></div>
+
+                            <!-- 이용약관 -->
+                            <div class="terms-item">
+                                <div class="terms-header">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" name="terms1" class="checkbox-input term-checkbox"
+                                            required>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">[필수] 이용약관에 동의합니다</span>
+                                    </label>
+                                    <button type="button" class="toggle-btn" aria-label="이용약관 상세보기">
+                                        <i class="xi-angle-down"></i>
+                                    </button>
+                                </div>
+                                <div class="terms-content">
+                                    <div class="terms-text">
+                                        <p><strong>제1조 (목적)</strong></p>
+                                        <p>본 약관은 빙기실치유마을(이하 "회사")이 제공하는 캠핑장 예약 및 숙박 서비스(이하 "서비스")를 이용함에 있어 회사와 이용자의 권리,
+                                            의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+                                        <p><strong>제2조 (정의)</strong></p>
+                                        <p>1. "회사"는 서비스를 제공하는 빙기실치유마을을 의미합니다.</p>
+                                        <p>2. "이용자"는 본 약관에 동의하고 회사의 서비스를 이용하는 개인을 의미합니다.</p>
+                                        <p>3. "예약"은 이용자가 서비스를 통해 숙박을 신청하는 행위를 의미합니다.</p>
+
+                                        <p><strong>제3조 (서비스 내용)</strong></p>
+                                        <p>회사가 제공하는 서비스는 캠핑장 숙박 예약, 관련 정보 제공 등을 포함합니다.</p>
+
+                                        <p><strong>제4조 (이용자의 의무)</strong></p>
+                                        <p>이용자는 예약 시 정확한 정보를 제공해야 하며, 예약 조건을 준수해야 합니다.</p>
+
+                                        <p><strong>제5조 (환불 정책)</strong></p>
+                                        <p>환불은 회사의 환불 정책에 따라 처리되며, 상세한 내용은 별도 안내를 참고하시기 바랍니다.</p>
+
+                                        <p><strong>제6조 (서비스 이용 제한)</strong></p>
+                                        <p>회사는 다음의 경우 서비스 이용을 제한할 수 있습니다:</p>
+                                        <p>- 법령 또는 본 약관에 위배되는 경우</p>
+                                        <p>- 타인의 권리를 침해하는 경우</p>
+                                        <p>- 공공질서 및 미풍양속을 저해하는 경우</p>
+
+                                        <p><strong>제7조 (면책조항)</strong></p>
+                                        <p>회사는 불가항력적 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 개인정보 수집 및 이용동의 -->
+                            <div class="terms-item">
+                                <div class="terms-header">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" name="terms2" class="checkbox-input term-checkbox"
+                                            required>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">[필수] 개인정보 수집 및 이용에 동의합니다</span>
+                                    </label>
+                                    <button type="button" class="toggle-btn" aria-label="개인정보 수집 및 이용 상세보기">
+                                        <i class="xi-angle-down"></i>
+                                    </button>
+                                </div>
+                                <div class="terms-content">
+                                    <div class="terms-text">
+                                        <p><strong>개인정보 수집 및 이용 동의</strong></p>
+
+                                        <p><strong>1. 수집하는 개인정보 항목</strong></p>
+                                        <p>- 필수 항목: 성명, 연락처, 이메일, 예약 정보</p>
+                                        <p>- 선택 항목: 특별 요청사항</p>
+
+                                        <p><strong>2. 개인정보의 수집 및 이용목적</strong></p>
+                                        <p>- 숙박 예약 및 관리</p>
+                                        <p>- 결제 및 환불 처리</p>
+                                        <p>- 고객 상담 및 서비스 제공</p>
+                                        <p>- 마케팅 정보 제공 (동의한 경우에만)</p>
+
+                                        <p><strong>3. 개인정보의 보유 및 이용기간</strong></p>
+                                        <p>- 서비스 이용기간 동안 보유하며, 이용 종료 후 3년간 보관 후 삭제</p>
+
+                                        <p><strong>4. 개인정보 제3자 제공</strong></p>
+                                        <p>- 법령에 의거한 경우를 제외하고는 개인정보를 제3자에게 제공하지 않습니다.</p>
+
+                                        <p><strong>5. 개인정보 보호</strong></p>
+                                        <p>- 회사는 개인정보 보호를 위해 최선의 노력을 다합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 개인정보 제3자 제공 동의 -->
+                            <div class="terms-item">
+                                <div class="terms-header">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" name="terms3" class="checkbox-input term-checkbox">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">[선택] 개인정보 제3자 제공에 동의합니다</span>
+                                    </label>
+                                    <button type="button" class="toggle-btn" aria-label="개인정보 제3자 제공 상세보기">
+                                        <i class="xi-angle-down"></i>
+                                    </button>
+                                </div>
+                                <div class="terms-content">
+                                    <div class="terms-text">
+                                        <p><strong>개인정보 제3자 제공 동의</strong></p>
+
+                                        <p><strong>1. 제공받는 자</strong></p>
+                                        <p>- 결제 처리 관련 업체</p>
+                                        <p>- 마케팅 관련 업체</p>
+
+                                        <p><strong>2. 제공하는 개인정보의 항목</strong></p>
+                                        <p>- 성명, 연락처, 이메일</p>
+
+                                        <p><strong>3. 이용목적</strong></p>
+                                        <p>- 결제 및 예약</p>
+                                        <p>- 마케팅 및 프로모션</p>
+
+                                        <p><strong>4. 보유 및 이용기간</strong></p>
+                                        <p>- 이용목적 달성 후 3년 이내 파기</p>
+
+                                        <p style="margin-top: 20px; color: #666; font-size: 0.9rem;"><strong>※ 선택 사항이므로
+                                                동의하지 않아도 서비스 이용이 가능합니다.</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 마케팅 정보 수신 동의 -->
+                            <div class="terms-item">
+                                <div class="terms-header">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" name="terms4" class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">[선택] 마케팅 정보 수신에 동의합니다</span>
+                                    </label>
+                                </div>
+                                <p
+                                    style="padding: 12px 20px; color: #666; font-size: 0.9rem; background-color: #f9f9f9; border-radius: 4px;">
+                                    이메일, SMS 등을 통해 캠핑장의 새로운 서비스, 이벤트 정보 등을 받을 수 있습니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 다음페이지 이동 버튼 -->
+                        <div class="shortcut-button">
+                            <a href="./booking1.html" class="btn-prev">이전 단계</a>
+                            <a href="./booking3.html" class="btn-next" id="submitBtn" disabled>다음 단계</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- quick -->
+    <? include "../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../footer.html"?>
+    <!-- //footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 약관 토글 기능
+            $('.toggle-btn').on('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const $termsItem = $(this).closest('.terms-item');
+                const $termsContent = $termsItem.find('.terms-content');
+                const $icon = $(this).find('i');
+                
+                // 다른 항목 닫기
+                $('.terms-content').not($termsContent).removeClass('active');
+                $('.toggle-btn i').not($icon).removeClass('xi-angle-up').addClass('xi-angle-down');
+                
+                // 현재 항목 토글
+                $termsContent.toggleClass('active');
+                $icon.toggleClass('xi-angle-down xi-angle-up');
+            });
+
+            // 헤더 클릭으로도 토글 작동
+            $('.terms-header').on('click', function (e) {
+                if (!$(e.target).is('input')) {
+                    $(this).find('.toggle-btn').click();
+                }
+            });
+
+            // 필수 약관 체크박스
+            const $termsCheckboxes = $('.term-checkbox');
+            const $submitBtn = $('#submitBtn');
+            const $agreeAll = $('#agreeAll');
+
+            function updateSubmitBtn() {
+                const allChecked = $termsCheckboxes.length === $termsCheckboxes.filter(':checked').length;
+                $submitBtn.prop('disabled', !allChecked);
+            }
+
+            $termsCheckboxes.on('change', function () {
+                updateSubmitBtn();
+            });
+
+            // 전체 동의 체크박스
+            $agreeAll.on('change', function () {
+                const isChecked = $(this).is(':checked');
+                $('.term-checkbox').prop('checked', isChecked);
+                $('input[name="terms3"], input[name="terms4"]').prop('checked', isChecked);
+                updateSubmitBtn();
+            });
+
+            // 개별 체크박스가 변경될 때 전체 동의 상태 업데이트
+            $('input[name*="terms"]').on('change', function () {
+                const allTermsChecked = $termsCheckboxes.filter(':checked').length === $termsCheckboxes.length;
+                const optionalTermsChecked = $('input[name="terms3"], input[name="terms4"]').is(':checked');
+
+                if (allTermsChecked && optionalTermsChecked) {
+                    $agreeAll.prop('checked', true);
+                } else {
+                    $agreeAll.prop('checked', false);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

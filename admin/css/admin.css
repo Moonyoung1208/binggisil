@@ -1,0 +1,871 @@
+/* ==========================================
+   관리자 페이지 공통 스타일
+   ========================================== */
+
+@charset "utf-8";
+
+/* ==========================================
+   리셋 및 기본 스타일
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+/* ==========================================
+   색상 변수 및 상수
+   ========================================== */
+:root {
+    --primary-color: #009e72;
+    --primary-dark: #166856;
+    --primary-light: #c5e3c0;
+    --secondary-color: #ffc862;
+    --border-color: #e8e8e8;
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-light: #999;
+    --bg-light: #f5f5f5;
+    --bg-white: #fff;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --transition: 0.3s ease-in-out;
+}
+
+/* ==========================================
+   레이아웃 - 사이드바 + 메인 컨테이너
+   ========================================== */
+.admin-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* 사이드바 */
+.admin-sidebar {
+    width: 260px;
+    background-color: var(--primary-dark);
+    color: #fff;
+    /* overflow-y: auto; */
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-sidebar-header {
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.admin-sidebar-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.admin-sidebar-header p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.admin-sidebar-menu li {
+    margin: 0;
+}
+
+.admin-sidebar-menu>li>a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    transition: all var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.admin-sidebar-menu>li>a:hover,
+.admin-sidebar-menu>li>a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left-color: var(--secondary-color);
+}
+
+.admin-sidebar-menu>li>a i {
+    width: 24px;
+    margin-right: 12px;
+    text-align: center;
+}
+
+.admin-sidebar-submenu {
+    list-style: none;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.admin-sidebar-menu>li.open>.admin-sidebar-submenu {
+    display: block;
+}
+
+.admin-sidebar-submenu li a {
+    display: block;
+    padding: 10px 20px 10px 56px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    transition: all var(--transition);
+    border-left: 2px solid transparent;
+}
+
+.admin-sidebar-submenu li a:hover,
+.admin-sidebar-submenu li a.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--secondary-color);
+}
+
+/* 메인 콘텐츠 영역 */
+.admin-main {
+    margin-left: 260px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+}
+
+/* 상단 헤더 */
+.admin-header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.admin-header-left h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.admin-header-left p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.admin-user-name {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.admin-logout-btn {
+    padding: 8px 16px;
+    background-color: var(--danger);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all var(--transition);
+}
+
+.admin-logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* 메인 콘텐츠 */
+.admin-content {
+    flex: 1;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+/* ==========================================
+   카드 컴포넌트
+   ========================================== */
+.card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: #fafafa;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ==========================================
+   테이블
+   ========================================== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table thead {
+    background-color: var(--primary-dark);
+    color: #fff;
+}
+
+.table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+/* ==========================================
+   버튼 스타일
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all var(--transition);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #008260;
+}
+
+.btn-primary:active {
+    background-color: #006b4f;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-large {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ==========================================
+   폼 요소
+   ========================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 158, 114, 0.1);
+}
+
+.form-control::placeholder {
+    color: var(--text-light);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 35px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-check label {
+    cursor: pointer;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* ==========================================
+   배지/라벨
+   ========================================== */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background-color: rgba(0, 158, 114, 0.1);
+    color: var(--primary-color);
+}
+
+.badge-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success);
+}
+
+.badge-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+}
+
+.badge-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #856404;
+}
+
+.badge-info {
+    background-color: rgba(23, 162, 184, 0.1);
+    color: var(--info);
+}
+
+/* ==========================================
+   알림/메시지
+   ========================================== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.alert-primary {
+    background-color: rgba(0, 158, 114, 0.1);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success);
+    border-left-color: var(--success);
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--danger);
+    border-left-color: var(--danger);
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    border-left-color: var(--warning);
+}
+
+/* ==========================================
+   통계 카드
+   ========================================== */
+.stat-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #008260 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-card.danger {
+    background: linear-gradient(135deg, var(--danger) 0%, #c82333 100%);
+}
+
+.stat-card.warning {
+    background: linear-gradient(135deg, var(--warning) 0%, #e0a800 100%);
+}
+
+.stat-card.info {
+    background: linear-gradient(135deg, var(--info) 0%, #138496 100%);
+}
+
+.stat-card-number {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-card-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   유틸리티
+   ========================================== */
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+/* ==========================================
+   반응형 디자인
+   ========================================== */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        width: 220px;
+    }
+
+    .admin-main {
+        margin-left: 220px;
+    }
+
+    .admin-header {
+        padding: 15px 20px;
+    }
+
+    .admin-content {
+        padding: 20px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .table {
+        font-size: 13px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        max-height: 80px;
+        left: 0;
+        top: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-sidebar-header {
+        padding: 15px 20px;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+        min-width: 150px;
+    }
+
+    .admin-sidebar-header h1 {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    .admin-sidebar-header p {
+        font-size: 11px;
+    }
+
+    .admin-sidebar-menu {
+        display: flex;
+        padding: 0;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .admin-sidebar-menu>li {
+        margin: 0;
+    }
+
+    .admin-sidebar-menu>li>a {
+        padding: 20px 15px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+    }
+
+    .admin-sidebar-menu>li>a:hover,
+    .admin-sidebar-menu>li>a.active {
+        border-left: none;
+        border-bottom-color: var(--secondary-color);
+    }
+
+    .admin-sidebar-submenu {
+        display: none !important;
+    }
+
+    .admin-main {
+        margin-left: 0;
+        margin-top: 80px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .admin-header-left h2 {
+        font-size: 20px;
+    }
+
+    .admin-header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .admin-content {
+        padding: 15px;
+    }
+
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .stat-card-number {
+        font-size: 24px;
+    }
+
+    .stat-card-label {
+        font-size: 13px;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .admin-sidebar {
+        max-height: 70px;
+    }
+
+    .admin-sidebar-menu>li>a {
+        padding: 15px 10px;
+        font-size: 12px;
+    }
+
+    .admin-sidebar-menu>li>a i {
+        width: 20px;
+        margin-right: 8px;
+    }
+
+    .admin-main {
+        margin-top: 70px;
+    }
+
+    .admin-header {
+        padding: 12px;
+    }
+
+    .admin-header-left h2 {
+        font-size: 18px;
+    }
+
+    .admin-header-left p {
+        display: none;
+    }
+
+    .admin-header-right {
+        gap: 10px;
+    }
+
+    .admin-user-name {
+        display: none;
+    }
+
+    .admin-content {
+        padding: 12px;
+    }
+
+    .card {
+        border-radius: 4px;
+    }
+
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding: 12px;
+    }
+
+    .card-header h3 {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .table {
+        font-size: 11px;
+    }
+
+    .table th,
+    .table td {
+        padding: 6px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .form-control {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,306 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/reservation.css">
+    <link rel="stylesheet" href="../css/sub04/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../sub03/information.html">이용안내</a></li>
+                        <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                        <li><a href="../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="reservation.html">예약안내</a></li>
+                        <li><a href="booking.html">온라인 예약하기</a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        예약안내
+                    </p>
+                    <ul>
+                        <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="booking.html" class="point">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>온라인 예약하기</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-con">
+                    <!-- 예약 프로세스 -->
+                    <ul class="process">
+                        <li>1. 예약선택</li>
+                        <li>2. 약관동의</li>
+                        <li>3. 예약정보입력</li>
+                        <li class="active">4. 예약완료</li>
+                        <li>5. 결제하기</li>
+                    </ul>
+
+                    <!-- 예약완료 화면 -->
+                    <div class="completion-container">
+                        <!-- 완료 메시지 -->
+                        <div class="completion-message">
+                            <div class="success-icon">
+                                <i class="xi-check-circle"></i>
+                            </div>
+                            <h2>예약이 완료되었습니다!</h2>
+                            <p>예약 정보가 저장되었습니다.<br>
+                                결제 페이지로 이동하여 결제를 완료해주세요.</p>
+                        </div>
+
+                        <!-- 예약 정보 -->
+                        <div class="completion-info">
+                            <h3 class="info-title">예약 정보</h3>
+                            
+                            <div class="info-box">
+                                <h4 class="box-title">예약번호</h4>
+                                <div class="reservation-number">BK-2024-001234</div>
+                                <p class="info-note">위 번호를 메모하여 예약 확인 및 취소 시 사용하세요.</p>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-box">
+                                    <h4 class="box-title">예약자명</h4>
+                                    <p class="box-content">김예약</p>
+                                </div>
+                                <div class="info-box">
+                                    <h4 class="box-title">연락처</h4>
+                                    <p class="box-content">010-0000-0000</p>
+                                </div>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-box">
+                                    <h4 class="box-title">이메일</h4>
+                                    <p class="box-content">example@email.com</p>
+                                </div>
+                                <div class="info-box">
+                                    <h4 class="box-title">숙소 종류</h4>
+                                    <p class="box-content">글래핑</p>
+                                </div>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-box">
+                                    <h4 class="box-title">체크인</h4>
+                                    <p class="box-content">2024.01.15 (15:00)</p>
+                                </div>
+                                <div class="info-box">
+                                    <h4 class="box-title">체크아웃</h4>
+                                    <p class="box-content">2024.01.17 (11:00)</p>
+                                </div>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-box">
+                                    <h4 class="box-title">인원</h4>
+                                    <p class="box-content">4명</p>
+                                </div>
+                                <div class="info-box">
+                                    <h4 class="box-title">객실</h4>
+                                    <p class="box-content">305호</p>
+                                </div>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-box">
+                                    <h4 class="box-title">숙박 일수</h4>
+                                    <p class="box-content">2박</p>
+                                </div>
+                                <div class="info-box">
+                                    <h4 class="box-title">추가 서비스</h4>
+                                    <p class="box-content">조식 2인, 체험 프로그램</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 결제 정보 -->
+                        <div class="payment-info">
+                            <h3 class="info-title">결제 정보</h3>
+                            
+                            <div class="payment-details">
+                                <div class="payment-item">
+                                    <span class="payment-label">숙박료</span>
+                                    <span class="payment-value">300,000원</span>
+                                </div>
+                                <div class="payment-item">
+                                    <span class="payment-label">조식료 (2인)</span>
+                                    <span class="payment-value">30,000원</span>
+                                </div>
+                                <div class="payment-item">
+                                    <span class="payment-label">체험 프로그램</span>
+                                    <span class="payment-value">50,000원</span>
+                                </div>
+                                <div class="payment-divider"></div>
+                                <div class="payment-item total">
+                                    <span class="payment-label">총 결제 금액</span>
+                                    <span class="payment-value">380,000원</span>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <h4 class="method-title">결제 방법</h4>
+                                <p class="method-info">신용카드, 계좌이체, 휴대폰 결제</p>
+                            </div>
+
+                            <div class="payment-notice">
+                                <p><strong>유의사항:</strong></p>
+                                <ul>
+                                    <li>예약은 결제 완료 시 최종 확정됩니다.</li>
+                                    <li>취소 수수료는 취소 기간에 따라 다릅니다.</li>
+                                    <li>특별 요청사항은 운영팀에서 확인 후 연락드립니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 다음 단계 안내 -->
+                        <div class="next-step">
+                            <div class="step-icon">
+                                <i class="xi-arrow-right"></i>
+                            </div>
+                            <h4 class="step-title">다음 단계</h4>
+                            <p class="step-desc">아래 '결제하기' 버튼을 클릭하여 결제를 완료해주세요.</p>
+                        </div>
+
+                        <!-- 버튼 그룹 -->
+                        <div class="completion-buttons">
+                            <a href="mybooking.html" class="btn-view">예약조회</a>
+                            <a href="booking5.html" class="btn-payment">결제하기</a>
+                        </div>
+
+                        <!-- 추가 안내 -->
+                        <div class="additional-info">
+                            <h4>문의사항</h4>
+                            <p>예약 관련 문의는 아래 연락처로 주시기 바랍니다.</p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <span class="contact-label">전화</span>
+                                    <span class="contact-value">1234-5678</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-label">이메일</span>
+                                    <span class="contact-value">info@binggisil.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <span class="contact-label">운영시간</span>
+                                    <span class="contact-value">09:00 ~ 18:00 (연중무휴)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- quick -->
+    <? include "../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../footer.html"?>
+    <!-- //footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 페이지 로드 시 완료 애니메이션
+            setTimeout(function () {
+                $('.success-icon').addClass('show');
+            }, 100);
+
+            // 인쇄 기능
+            function printReservation() {
+                window.print();
+            }
+
+            // 결제 페이지로 이동
+            window.goToPayment = function () {
+                // 실제 결제 페이지로 이동
+                window.location.href = 'booking5.html';
+                // 또는 결제 API 호출
+            };
+
+            // 예약번호 복사
+            $('.reservation-number').on('click', function () {
+                const reservationNumber = $(this).text();
+                const $temp = $('<input>');
+                $('body').append($temp);
+                $temp.val(reservationNumber).select();
+                document.execCommand('copy');
+                $temp.remove();
+                alert('예약번호가 복사되었습니다.');
+            });
+        });
+    </script>
+</body>
+
+</html>

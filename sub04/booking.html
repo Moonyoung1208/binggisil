@@ -1,0 +1,374 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../sub03/information.html">이용안내</a></li>
+                        <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                        <li><a href="../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="reservation.html">예약안내</a></li>
+                        <li><a href="booking.html">온라인 예약하기</a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        예약안내
+                    </p>
+                    <ul>
+                        <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="booking.html" class="point">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>온라인 예약하기</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-con">
+                    <div class=" calendar" aria-label="월 달력">
+                        <div class="calendar-header">
+                            <button class="nav-btn" id="prevMonth"><i class="fa-solid fa-angle-left"></i></button>
+                            <div class="month-title" id="monthTitle">2025년 10월</div>
+                            <button class="nav-btn" id="nextMonth"><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
+
+                        <div class="dow" aria-hidden="true">
+                            <div>일</div>
+                            <div>월</div>
+                            <div>화</div>
+                            <div>수</div>
+                            <div>목</div>
+                            <div>금</div>
+                            <div>토</div>
+                        </div>
+
+                        <div class="grid-7" id="calendarGrid" aria-live="polite">
+                            <!-- 예시 날짜 -->
+                            <div class="day other-month">29</div>
+                            <div class="day other-month">30</div>
+                            <div class="day">
+                                <span class="date">1</span>
+                                <a href="booking1.html" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="#" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                                <a href="#" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="#" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail">6</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">2</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">3</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">3</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">3</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">4</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">3</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">5</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">3</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">6</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">3</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">7</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">8</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">9</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day">
+                                <span class="date">10</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a>
+                            </div>
+                            <div class="day"><span class="date">11</span>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 A</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">캠핑장 B</span>
+                                    <span class="avail">5</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">펜션</span>
+                                    <span class="avail">1</span>
+                                </a>
+                                <a href="" class="date-box">
+                                    <span class="site">민박</span>
+                                    <span class="avail zero">0</span>
+                                </a></div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day">15</div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day">20</div>
+                            <div class="day">21</div>
+                            <div class="day">22</div>
+                            <div class="day">23</div>
+                            <div class="day">24</div>
+                            <div class="day">25</div>
+                            <div class="day">26</div>
+                            <div class="day">27</div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                            <div class="day">31</div>
+                            <div class="day other-month">1</div>
+                            <div class="day other-month">2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="shortcut-button">
+                <a href=""></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <!-- quick -->
+    <? include "../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../footer.html"?>
+    <!-- //footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/sub.js"></script>
+</body>
+
+</html>

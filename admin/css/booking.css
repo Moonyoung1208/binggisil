@@ -1,0 +1,733 @@
+/* ==========================================
+   달력 기반 예약 관리 페이지 스타일
+   ========================================== */
+
+@charset "utf-8";
+
+/* ==========================================
+   캘린더 컨테이너
+   ========================================== */
+.booking-calendar-container {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* ==========================================
+   캘린더 헤더
+   ========================================== */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    gap: 20px;
+}
+
+.calendar-nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-nav-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.calendar-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.calendar-month-year {
+    font-size: 20px;
+    font-weight: 700;
+    min-width: 150px;
+    text-align: center;
+}
+
+.calendar-today-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all var(--transition);
+}
+
+.calendar-today-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   필터 및 보기 옵션
+   ========================================== */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.calendar-filters {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.calendar-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calendar-filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.calendar-filter-group select {
+    padding: 6px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+/* ==========================================
+   월별 캘린더 뷰
+   ========================================== */
+.calendar-wrapper {
+    padding: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+}
+
+.calendar-day-header {
+    background-color: var(--primary-dark);
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.calendar-day-cell {
+    background-color: var(--bg-white);
+    min-height: 120px;
+    padding: 8px;
+    position: relative;
+    cursor: default;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-day-cell:hover {
+    background-color: #f9f9f9;
+}
+
+.calendar-day-cell.other-month {
+    background-color: #fafafa;
+    opacity: 0.5;
+}
+
+.calendar-day-cell.today {
+    background-color: #fafafa;
+    border: 2px solid var(--primary-color);
+}
+
+.calendar-day-number {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.calendar-day-zones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+/* ==========================================
+   구역별 예약 건수 표시
+   ========================================== */
+.zone-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.zone-count:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.zone-count strong {
+    font-weight: 600;
+    min-width: 20px;
+}
+
+.zone-count span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #000;
+    padding: 1px 8px;
+    border-radius: 2px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+/* 구역별 색상 */
+.zone-count[data-zone="camping-a"] {
+    background-color: rgba(40, 167, 69, 0.1);
+    /* border-color: #28a745; */
+}
+
+
+
+.zone-count[data-zone="camping-b"] {
+    background-color: rgba(255, 193, 7, 0.1);
+    /* border-color: #ffc107; */
+}
+
+
+.zone-count[data-zone="bisite"] {
+    background-color: rgba(23, 162, 184, 0.1);
+    /* border-color: #17a2b8; */
+}
+
+
+
+.zone-count[data-zone="pension"] {
+    background-color: rgba(188, 148, 226, 0.1);
+    /* border-color: #6c757d; */
+}
+
+
+
+.zone-count[data-zone="minbak"] {
+    background-color: rgba(220, 53, 69, 0.1);
+    /* border-color: #dc3545; */
+}
+
+
+
+/* ==========================================
+   사이드 패널
+   ========================================== */
+.booking-calendar-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.calendar-main {
+    flex: 1;
+}
+
+.calendar-sidebar {
+    width: 300px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.calendar-sidebar-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.calendar-sidebar-section {
+    margin-bottom: 20px;
+}
+
+.calendar-sidebar-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.calendar-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calendar-action-btn {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all var(--transition);
+}
+
+.calendar-action-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* ==========================================
+   숙소별 칸막이
+   ========================================== */
+.facility-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.facility-item {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    background-color: var(--bg-white);
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.facility-item:hover {
+    background-color: var(--bg-light);
+}
+
+.facility-item.selected {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.facility-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.facility-name {
+    flex: 1;
+}
+
+.facility-count {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-left: auto;
+}
+
+/* ==========================================
+   범례 (Legend)
+   ========================================== */
+.calendar-legend {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.legend-item strong {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.legend-item:nth-of-type(1){ background: rgba(40, 167, 69, 0.1); }
+.legend-item:nth-of-type(2){ background: rgba(255, 193, 7, 0.1); }
+.legend-item:nth-of-type(3){ background: rgba(188, 148, 226, 0.1); }
+.legend-item:nth-of-type(4){ background: rgba(23, 162, 184, 0.1); }
+.legend-item:nth-of-type(5){ background: rgba(220, 53, 69, 0.1); }
+
+/* ==========================================
+   구역별 예약 리스트 모달
+   ========================================== */
+.zone-list-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.zone-list-modal.active {
+    display: flex;
+}
+
+.zone-list-container {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.zone-list-header {
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #008260 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.zone-list-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.zone-list-close {
+    background: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    transition: transform var(--transition);
+}
+
+.zone-list-close:hover {
+    transform: scale(1.2);
+}
+
+.zone-list-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.zone-booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.zone-booking-table thead {
+    background-color: var(--primary-dark);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.zone-booking-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.zone-booking-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.zone-booking-table tbody tr:hover {
+    background-color: rgba(0, 158, 114, 0.02);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-badge.confirmed {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #28a745;
+}
+
+.status-badge.pending {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #856404;
+}
+
+.status-badge.cancelled {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #dc3545;
+}
+
+.zone-list-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.zone-list-footer .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   반응형 디자인
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .booking-calendar-layout {
+        gap: 15px;
+    }
+
+    .calendar-sidebar {
+        width: 250px;
+    }
+
+    .calendar-day-cell {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-calendar-layout {
+        flex-direction: column;
+    }
+
+    .calendar-sidebar {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .calendar-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .calendar-filters {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .calendar-filter-group {
+        width: 100%;
+    }
+
+    .calendar-filter-group select {
+        width: 100%;
+    }
+
+    .calendar-wrapper {
+        padding: 10px;
+    }
+
+    .calendar-day-cell {
+        min-height: 80px;
+    }
+
+    .calendar-day-number {
+        font-size: 11px;
+    }
+
+    .zone-count {
+        font-size: 10px;
+    }
+
+    .zone-list-modal {
+        padding: 10px;
+    }
+
+    .zone-list-container {
+        width: 95%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-header {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .calendar-nav-buttons {
+        gap: 5px;
+    }
+
+    .calendar-nav-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .calendar-month-year {
+        font-size: 16px;
+        min-width: 120px;
+    }
+
+    .calendar-today-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .calendar-controls {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .calendar-filter-group label {
+        font-size: 12px;
+    }
+
+    .calendar-filter-group select {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .calendar-wrapper {
+        padding: 8px;
+    }
+
+    .calendar-day-header {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+
+    .calendar-day-cell {
+        min-height: 70px;
+        padding: 4px;
+    }
+
+    .calendar-day-number {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .zone-count {
+        font-size: 9px;
+        padding: 2px 4px;
+    }
+
+    .calendar-sidebar {
+        max-height: 250px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .calendar-sidebar-title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .facility-item {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .zone-list-container {
+        width: 95%;
+    }
+
+    .zone-list-header {
+        padding: 15px;
+    }
+
+    .zone-list-header h3 {
+        font-size: 14px;
+    }
+
+    .zone-list-body {
+        padding: 12px;
+    }
+
+    .zone-booking-table {
+        font-size: 11px;
+    }
+
+    .zone-booking-table th,
+    .zone-booking-table td {
+        padding: 8px;
+    }
+
+    .calendar-legend {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .legend-item {
+        font-size: 11px;
+    }
+}

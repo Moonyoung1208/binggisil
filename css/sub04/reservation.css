@@ -1,20 +1,23 @@
-.shortcut-button{
+.shortcut-button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 80px;
     gap: 10px;
 }
-.shortcut-button a{
+
+.shortcut-button a {
     /* background-color: #ccc; */
     padding: 5px 15px;
     box-sizing: border-box;
     color: #fff;
     border-radius: 5px;
 }
-.sub02-stay{
+
+.sub02-stay {
     background-color: #3d5078;
 }
-.sub04-online{
+
+.sub04-online {
     background-color: #43a4ce;
 }

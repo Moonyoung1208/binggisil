@@ -1,0 +1,356 @@
+<?php
+	include_once('../gb/common.php');
+    include_once('../gb/lib/outlogin.lib.php');
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Xicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <link rel="stylesheet" href="../css/sub.css">
+    <link rel="stylesheet" href="../css/sub03/sub03.css">
+    <link rel="stylesheet" href="../css/sub04/reservation.css">
+    <link rel="stylesheet" href="../css/sub04/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <title>달빛고운 병곡 캠핑장</title>
+</head>
+
+<body>
+    <!-- header -->
+    <? include "../header.html"?>
+    <!-- //header -->
+
+    <div class="sub">
+        <div class="sub-wrap">
+            <div class="sub-text-box">
+                <p>다양한 체험과 연계된 숙박시설!</p>
+                <h1>빙기실치유마을</h1>
+            </div>
+
+        </div>
+        <div class="sub-address">
+            <ul class="address-wrap">
+                <li><a href="http://binggisil.com/" class="home"><i class="xi-home"></i></a></li>
+                <li><a href="javascript:void(0)" class="menu">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="../sub01/intro.html">빙기실 치유마을 소개</a></li>
+                        <li><a href="../sub02/camping01.html">달빛고운 병곡 캠핑장 소개</a></li>
+                        <li><a href="../sub03/information.html">이용안내</a></li>
+                        <li><a href="../sub05/cure/cure.html">체험안내</a></li>
+                        <li><a href="../sub06/farm.html">농산물안내</a></li>
+                        <li><a href="/gb/bbs/board.php?bo_table=notice">커뮤니티</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0)" class="menu border-none">예약안내</a>
+                    <ul class="address-wrap-sub">
+                        <li><a href="reservation.html">예약안내</a></li>
+                        <li><a href="booking.html">온라인 예약하기</a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-main">
+        <div class="sub-main-wrap">
+            <div class="sub-main-left">
+                <div class="sub-main-nav">
+                    <p class="sub-nav-title">
+                        예약안내
+                    </p>
+                    <ul>
+                        <li><a href="reservation.html">예약안내<i class="xi-angle-right"></i></a></li>
+                        <li><a href="booking.html" class="point">온라인 예약하기<i class="xi-angle-right"></i></a></li>
+                        <li><a href="mybooking.html">예약확인 및 취소<i class="xi-angle-right"></i></a></li>
+                    </ul>
+                </div>
+                <a href="https://www.camfit.co.kr/camp/6327c8becf39e5001fe4a240" class="online" target="_blank">
+                    <span>온라인예약</span>
+                    온라인 예약을<br>
+                    하실 수 있습니다!
+                    <i class="xi-angle-right"></i>
+                </a>
+            </div>
+
+            <div class="sub_contents">
+                <div class="title-text">
+                    <h1>온라인 예약하기</h1>
+                    <p class="pc">다양한 체험과 연계된 숙박시설, 빙기실치유마을에 오신 것을 환영합니다!</p>
+                    <p class="mobile">다양한 체험과 연계된 숙박시설,<br> 빙기실치유마을에 오신 것을 환영합니다!</p>
+                </div>
+
+                <div class="sub-con">
+                    <!-- 예약 프로세스 -->
+                    <ul class="process">
+                        <li>1. 예약선택</li>
+                        <li>2. 약관동의</li>
+                        <li>3. 예약정보입력</li>
+                        <li>4. 예약하기</li>
+                        <li class="active">5. 결제하기</li>
+                    </ul>
+
+                    <!-- 결제 페이지 -->
+                    <div class="payment-container">
+                        <!-- 결제 정보 요약 -->
+                        <div class="payment-summary-box">
+                            <div class="reservation-detail">
+                                <h2 class="detail-title">예약 정보</h2>
+                                <div class="detail-grid">
+                                    <div class="detail-item">
+                                        <span class="detail-label">예약번호</span>
+                                        <span class="detail-value">BK-2024-001234</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">예약자명</span>
+                                        <span class="detail-value">김예약</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payment-breakdown">
+                                <h2 class="detail-title">결제 내역</h2>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">숙박료 (2박)</span>
+                                    <span class="breakdown-value">300,000원</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">조식료</span>
+                                    <span class="breakdown-value">30,000원</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">체험 프로그램</span>
+                                    <span class="breakdown-value">50,000원</span>
+                                </div>
+                                <div class="breakdown-divider"></div>
+                                <div class="breakdown-item total">
+                                    <span class="breakdown-label">총 결제 금액</span>
+                                    <span class="breakdown-value">380,000원</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 무통장 입금 안내 -->
+                        <div class="payment-method-box">
+                            <h2 class="payment-title">결제 방법</h2>
+
+                            <div class="method-info">
+                                <div class="method-icon">
+                                    <i class="fa-solid fa-money-check-dollar"></i>
+                                </div>
+                                <div class="method-details">
+                                    <h3 class="method-name">무통장 입금</h3>
+                                    <p class="method-desc">아래 계좌로 입금하신 후 입금 확인 버튼을 클릭해주세요.</p>
+                                </div>
+                            </div>
+
+                            <!-- 입금 계좌 정보 -->
+                            <div class="account-info">
+                                <div class="account-item">
+                                    <span class="account-label">은행명</span>
+                                    <span class="account-value">국민은행</span>
+                                </div>
+                                <div class="account-item">
+                                    <span class="account-label">계좌번호</span>
+                                    <div class="account-number-wrapper">
+                                        <span class="account-value account-number">123-456-789012</span>
+                                        <button type="button" class="copy-btn" onclick="copyAccountNumber()">
+                                            <i class="xi-copy"></i> 복사
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="account-item">
+                                    <span class="account-label">예금주</span>
+                                    <span class="account-value">빙기실치유마을</span>
+                                </div>
+                                <div class="account-item">
+                                    <span class="account-label">입금 금액</span>
+                                    <span class="account-value amount">380,000원</span>
+                                </div>
+                            </div>
+
+                            <!-- 입금 유의사항 -->
+                            <div class="account-notice">
+                                <h3 class="notice-title">
+                                    <i class="xi-info-o"></i> 입금 시 주의사항
+                                </h3>
+                                <ul class="notice-list">
+                                    <li><i class="fa-solid fa-circle-exclamation"></i> 정확한 입금 금액으로 입금해주시기 바랍니다.</li>
+                                    <li><i class="fa-solid fa-circle-exclamation"></i> 계좌 이체 수수료는 고객님 부담입니다.</li>
+                                    <li><i class="fa-solid fa-circle-exclamation"></i> 예약번호를 송금자명에 입력하면 입금 확인이 빨라집니다.</li>
+                                    <li><i class="fa-solid fa-circle-exclamation"></i> 예: 송금자명: BK-2024-001234</li>
+                                    <li><i class="fa-solid fa-circle-exclamation"></i> 입금 후 입금 확인 버튼을 클릭하면 결제가 완료됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 입금 확인 폼 -->
+                        <div class="payment-confirmation-box">
+                            <h2 class="payment-title">입금 확인</h2>
+
+                            <form id="paymentForm" method="POST" action="booking-complete.html">
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" id="confirmCheckbox" name="confirm" required>
+                                        <span class="checkbox-label">
+                                            위 계좌로 <strong>380,000원</strong>을 입금하였으며,
+                                            입금이 확인되면 예약이 최종 완료됨을 이해합니다.
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="accountHolder">입금자명 (선택)</label>
+                                    <input type="text" id="accountHolder" name="accountHolder"
+                                        placeholder="입금자명을 입력하세요">
+                                    <p class="form-help">송금자명에 예약번호를 입력하면 확인이 빨라집니다.</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="depositDate">입금일자 (선택)</label>
+                                    <input type="date" id="depositDate" name="depositDate">
+                                </div>
+
+                                <div class="payment-guide">
+                                    <h4 class="guide-title">결제 진행 과정</h4>
+                                    <div class="guide-steps">
+                                        <div class="guide-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <strong>계좌 확인</strong>
+                                                <p>위 계좌로 입금 금액을 확인합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="guide-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <strong>은행 이체</strong>
+                                                <p>본인 계좌에서 해당 금액을 이체합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="guide-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <strong>입금 확인</strong>
+                                                <p>입금 후 아래 버튼을 클릭합니다.</p>
+                                            </div>
+                                        </div>
+                                        <div class="guide-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <strong>결제 완료</strong>
+                                                <p>입금 확인 후 예약이 최종 완료됩니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 결제 버튼 -->
+                                <div class="payment-buttons">
+                                    <a href="./booking4.html" class="btn-prev">이전단계</a>
+                                    <a href="./booking.html" class="btn-prev">처음으로</a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 고객센터 -->
+                        <div class="customer-support">
+                            <h3 class="support-title">문의 및 지원</h3>
+                            <div class="support-info">
+                                <div class="support-item">
+                                    <i class="xi-phone"></i>
+                                    <div>
+                                        <strong>전화 상담</strong>
+                                        <p>1234-5678</p>
+                                        <small>09:00 ~ 18:00 (연중무휴)</small>
+                                    </div>
+                                </div>
+                                <div class="support-item">
+                                    <i class="xi-mail"></i>
+                                    <div>
+                                        <strong>이메일</strong>
+                                        <p>info@binggisil.com</p>
+                                        <small>24시간 접수 가능</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- quick -->
+    <? include "../quick.html"?>
+    <!-- //quick -->
+    <!-- footer -->
+    <? include "../footer.html"?>
+    <!-- //footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/sub.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 체크박스 상태에 따라 버튼 활성화
+            $('#confirmCheckbox').on('change', function () {
+                if ($(this).is(':checked')) {
+                    $('#paymentBtn').prop('disabled', false).addClass('active');
+                } else {
+                    $('#paymentBtn').prop('disabled', true).removeClass('active');
+                }
+            });
+
+            // FAQ 토글
+            $('.faq-question').on('click', function () {
+                $(this).toggleClass('active');
+                $(this).next('.faq-answer').slideToggle(300);
+            });
+
+            // 계좌번호 복사
+            window.copyAccountNumber = function () {
+                const accountNumber = document.querySelector('.account-number').textContent;
+                const $temp = $('<input>');
+                $('body').append($temp);
+                $temp.val(accountNumber).select();
+                document.execCommand('copy');
+                $temp.remove();
+
+                const $btn = document.querySelector('.copy-btn');
+                const originalText = $btn.innerHTML;
+                $btn.innerHTML = '<i class="xi-check"></i> 복사완료!';
+                $btn.classList.add('copied');
+
+                setTimeout(function () {
+                    $btn.innerHTML = originalText;
+                    $btn.classList.remove('copied');
+                }, 2000);
+            };
+
+            // 폼 제출 시 유효성 검사
+            $('#paymentForm').on('submit', function (e) {
+                if (!$('#confirmCheckbox').is(':checked')) {
+                    e.preventDefault();
+                    alert('입금 확인 동의 체크박스를 선택해주세요.');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

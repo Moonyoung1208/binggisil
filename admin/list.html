@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 내역 - 빙기실 치유 마을 관리자 페이지</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- 사이드바 -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h1>빙기실</h1>
+                <p>관리자 시스템</p>
+            </div>
+
+            <ul class="admin-sidebar-menu">
+                <li>
+                    <a href="./index.html">
+                        <i class="fas fa-home"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="open">
+                    <a href="./booking.html">
+                        <i class="fas fa-calendar-check"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="./setting.html">
+                        <i class="fas fa-cog"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="admin-main">
+            <!-- 상단 헤더 -->
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <h2>구역별 예약 내역</h2>
+                    <p id="zone-subtitle">캠핑존 A의 예약 현황을 확인하세요</p>
+                </div>
+                <div class="admin-header-right">
+                    <div class="admin-user-info">
+                        <div
+                            style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #009e72, #008260); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="admin-user-name">관리자</span>
+                    </div>
+                    <button class="admin-logout-btn">로그아웃</button>
+                </div>
+            </header>
+
+            <!-- 콘텐츠 영역 -->
+            <div class="admin-content">
+                <!-- 구역 정보 헤더 -->
+                <div class="zone-info-header">
+                    <div class="zone-info-left">
+                        <h1 class="zone-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="zone-name">캠핑존 A</span>
+                        </h1>
+                        <div class="zone-meta-info">
+                            <p class="zone-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span id="selected-date">2025-01-15</span>
+                            </p>
+                            <p class="zone-info-text" id="zone-info-text">
+                                <i class="fas fa-info-circle"></i>
+                                선택 날짜의 예약 현황을 확인하세요
+                            </p>
+                        </div>
+                    </div>
+                    <div class="zone-info-right">
+                        <button class="btn btn-primary" onclick="goBackToCalendar()">
+                            <i class="fas fa-arrow-left"></i> 달력으로 돌아가기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 필터 섹션 -->
+                <div class="booking-filters" style="margin-bottom: 20px;">
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="filter-zone">숙박 타입</label>
+                            <select id="filter-zone" onchange="changeZone(this.value)">
+                                <option value="camping-a">캠핑존 A</option>
+                                <option value="camping-b">캠핑존 B</option>
+                                <option value="bisite">예비사이트</option>
+                                <option value="pension">펜션</option>
+                                <option value="minbak">민박</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-date">날짜 선택</label>
+                            <input type="date" id="filter-date" value="2025-01-15" onchange="changeDate(this.value)">
+                        </div>
+                        <div class="filter-buttons">
+                            <button class="btn btn-primary" onclick="applyFilters()">
+                                <i class="fas fa-search"></i> 검색
+                            </button>
+                            <button class="btn btn-secondary" onclick="resetFilters()">
+                                <i class="fas fa-redo"></i> 초기화
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 통계 카드 -->
+                <div class="stats-grid">
+                    <div class="stats-grid-item">
+                        <span class="stats-value" id="total-bookings">0</span>
+                        <span class="stats-label">전체 예약</span>
+                    </div>
+                    <div class="stats-grid-item pending">
+                        <span class="stats-value" id="pending-bookings">0</span>
+                        <span class="stats-label">대기 중</span>
+                    </div>
+                    <div class="stats-grid-item completed">
+                        <span class="stats-value" id="confirmed-bookings">0</span>
+                        <span class="stats-label">확정됨</span>
+                    </div>
+                    <div class="stats-grid-item cancelled">
+                        <span class="stats-value" id="cancelled-bookings">0</span>
+                        <span class="stats-label">취소됨</span>
+                    </div>
+                </div>
+
+                <!-- 예약 테이블 -->
+                <div class="booking-section">
+                    <div class="booking-header">
+                        <h2>예약 목록</h2>
+                        <span class="booking-count" id="booking-list-count">총 0건</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="booking-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 100px;">예약번호</th>
+                                    <th style="width: 120px;">고객명</th>
+                                    <th style="width: 130px;">연락처</th>
+                                    <th style="width: 110px;">체크인</th>
+                                    <th style="width: 110px;">체크아웃</th>
+                                    <th style="width: 70px;">인원</th>
+                                    <th style="width: 100px;">요금</th>
+                                    <th style="width: 100px;">상태</th>
+                                    <th style="width: 150px;">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="booking-list-body">
+                                <tr>
+                                    <th style="width: 100px;">예약번호</th>
+                                    <th style="width: 120px;">고객명</th>
+                                    <th style="width: 130px;">연락처</th>
+                                    <th style="width: 110px;">체크인</th>
+                                    <th style="width: 110px;">체크아웃</th>
+                                    <th style="width: 70px;">인원</th>
+                                    <th style="width: 100px;">요금</th>
+                                    <th style="width: 100px;">상태</th>
+                                    <th style="width: 150px;">관리</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 페이지네이션 -->
+                    <div class="pagination-wrapper">
+                        <ul class="pagination">
+                            <li><span class="disabled">← 이전</span></li>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">다음 →</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 토스트 알림 컨테이너 -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // 존 이름 매핑
+        const zoneNames = {
+            'camping-a': '캠핑존 A',
+            'camping-b': '캠핑존 B',
+            'bisite': '예비사이트',
+            'pension': '펜션',
+            'minbak': '민박'
+        };
+
+        // 현재 선택된 존과 날짜
+        let currentZone = 'camping-a';
+        let currentDate = '2025-01-15';
+
+        // 존 변경
+        function changeZone(zone) {
+            currentZone = zone;
+            const zoneName = zoneNames[zone];
+            document.getElementById('zone-name').textContent = zoneName;
+        }
+
+        // 날짜 변경
+        function changeDate(date) {
+            currentDate = date;
+            document.getElementById('selected-date').textContent = date;
+        }
+
+        // 필터 적용
+        function applyFilters() {
+            const zone = document.getElementById('filter-zone').value;
+            const date = document.getElementById('filter-date').value;
+            
+            changeZone(zone);
+            changeDate(date);
+            
+            // 여기에 API 호출이나 데이터 로드 로직을 추가할 수 있습니다
+            showToast('info', `${zoneNames[zone]} - ${date} 데이터를 조회했습니다.`);
+            
+            console.log('선택된 존:', zone);
+            console.log('선택된 날짜:', date);
+        }
+
+        // 필터 초기화
+        function resetFilters() {
+            document.getElementById('filter-zone').value = 'camping-a';
+            document.getElementById('filter-date').value = '2025-01-15';
+            
+            currentZone = 'camping-a';
+            currentDate = '2025-01-15';
+            
+            document.getElementById('zone-name').textContent = zoneNames['camping-a'];
+            document.getElementById('selected-date').textContent = '2025-01-15';
+            
+            showToast('info', '필터가 초기화되었습니다.');
+        }
+
+        // 달력으로 돌아가기
+        function goBackToCalendar() {
+            window.location.href = './booking.html';
+        }
+
+        // 토스트 알림 함수
+        function showToast(type, message) {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            const iconMap = {
+                'success': 'fa-check-circle',
+                'error': 'fa-exclamation-circle',
+                'warning': 'fa-exclamation-triangle',
+                'info': 'fa-info-circle'
+            };
+
+            toast.innerHTML = `
+                <i class="fas ${iconMap[type]} toast-icon"></i>
+                <span class="toast-message">${message}</span>
+                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+    </script>

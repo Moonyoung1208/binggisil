@@ -1,0 +1,585 @@
+/* ==========================================
+   예약 상세 정보 페이지 스타일
+   ========================================== */
+
+@charset "utf-8";
+
+/* ==========================================
+   상단 액션 바
+   ========================================== */
+.detail-action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.detail-action-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-action-left .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.detail-booking-id {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.detail-action-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================================
+   상세 정보 카드
+   ========================================== */
+.detail-card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all var(--transition);
+}
+
+.detail-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.detail-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--bg-light);
+}
+
+.detail-card-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.detail-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.detail-card-actions .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.detail-card-body {
+    padding: 25px;
+}
+
+/* ==========================================
+   정보 그리드
+   ========================================== */
+.detail-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.detail-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-info-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.detail-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.detail-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   날짜 타임라인
+   ========================================== */
+.detail-date-timeline {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    gap: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1;
+}
+
+.timeline-marker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.timeline-marker.check-in {
+    background-color: var(--success);
+}
+
+.timeline-marker.check-out {
+    background-color: var(--info);
+}
+
+.timeline-content p {
+    margin: 0;
+}
+
+.timeline-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+.timeline-date {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.timeline-divider {
+    width: 30px;
+    height: 2px;
+    background-color: var(--border-color);
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   요금 정보
+   ========================================== */
+.detail-price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.price-item.total {
+    padding: 16px 0;
+    background-color: var(--bg-light);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 -15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.price-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.price-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.price-item.total .price-label {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.price-item.total .price-value {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.price-divider {
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 5px 0;
+}
+
+/* ==========================================
+   특별 요청사항
+   ========================================== */
+.detail-notes {
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.detail-notes p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   액션 버튼 그룹
+   ========================================== */
+.detail-action-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-top: 30px;
+}
+
+.detail-action-group .btn {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.detail-action-group .btn-secondary {
+    flex: 0.8;
+}
+
+/* ==========================================
+   버튼 크기 정의
+   ========================================== */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   상태 배지
+   ========================================== */
+.detail-status-badge {
+    display: inline-block;
+}
+
+/* ==========================================
+   반응형 디자인
+   ========================================== */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .detail-card-body {
+        padding: 20px;
+    }
+
+    .detail-action-group {
+        flex-direction: column;
+    }
+
+    .detail-action-group .btn {
+        min-width: 100%;
+    }
+}
+
+/* 태블릿 (768px 이하) */
+@media (max-width: 768px) {
+    .detail-action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 12px 15px;
+    }
+
+    .detail-action-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .detail-booking-id {
+        font-size: 16px;
+    }
+
+    .detail-card {
+        margin-bottom: 15px;
+    }
+
+    .detail-card-header {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .detail-card-header h3 {
+        font-size: 16px;
+    }
+
+    .detail-card-actions {
+        width: 100%;
+    }
+
+    .detail-card-actions .btn {
+        flex: 1;
+    }
+
+    .detail-card-body {
+        padding: 15px;
+    }
+
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .detail-date-timeline {
+        flex-direction: column;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    .timeline-divider {
+        display: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+    }
+
+    .detail-price-breakdown {
+        gap: 10px;
+    }
+
+    .price-item {
+        padding: 10px 0;
+    }
+
+    .detail-action-group {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .detail-action-group .btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+/* 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .detail-action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+    }
+
+    .detail-action-left {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .detail-action-left .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .detail-booking-id {
+        font-size: 14px;
+    }
+
+    .detail-action-right {
+        width: 100%;
+    }
+
+    .detail-card {
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+
+    .detail-card-header {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .detail-card-header h3 {
+        font-size: 14px;
+    }
+
+    .detail-card-actions {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .detail-card-actions .btn {
+        padding: 5px 10px;
+        font-size: 11px;
+        flex: 1;
+    }
+
+    .detail-card-body {
+        padding: 12px;
+    }
+
+    .detail-info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .detail-info-label {
+        font-size: 11px;
+    }
+
+    .detail-info-value {
+        font-size: 14px;
+    }
+
+    .detail-date-timeline {
+        margin-top: 15px;
+        padding-top: 15px;
+        gap: 10px;
+    }
+
+    .timeline-marker {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .timeline-label {
+        font-size: 11px;
+    }
+
+    .timeline-date {
+        font-size: 13px;
+    }
+
+    .detail-price-breakdown {
+        gap: 8px;
+    }
+
+    .price-item {
+        padding: 8px 0;
+        font-size: 13px;
+    }
+
+    .price-label {
+        font-size: 12px;
+    }
+
+    .price-value {
+        font-size: 14px;
+    }
+
+    .price-item.total .price-label {
+        font-size: 13px;
+    }
+
+    .price-item.total .price-value {
+        font-size: 16px;
+    }
+
+    .detail-notes {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .detail-notes p {
+        font-size: 12px;
+    }
+
+    .detail-action-group {
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px;
+        margin-top: 15px;
+    }
+
+    .detail-action-group .btn {
+        width: 100%;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .detail-action-group .btn i {
+        margin-right: 4px;
+    }
+}
+
+/* ==========================================
+   인쇄 스타일
+   ========================================== */
+@media print {
+
+    .admin-sidebar,
+    .admin-header,
+    .detail-action-bar,
+    .detail-action-group,
+    .detail-card-actions {
+        display: none;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .detail-card {
+        page-break-inside: avoid;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+    }
+
+    .detail-card-header {
+        background-color: #f5f5f5;
+    }
+}

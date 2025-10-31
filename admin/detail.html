@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 상세 정보 - 빙기실 치유 마을 관리자 페이지</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/detail.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- 사이드바 -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h1>빙기실</h1>
+                <p>관리자 시스템</p>
+            </div>
+
+            <ul class="admin-sidebar-menu">
+                <li>
+                    <a href="./index.html">
+                        <i class="fas fa-home"></i>
+                        대시보드
+                    </a>
+                </li>
+                <li class="open">
+                    <a href="./booking.html">
+                        <i class="fas fa-calendar-check"></i>
+                        예약 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="./setting.html">
+                        <i class="fas fa-cog"></i>
+                        설정
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 메인 컨텐츠 -->
+        <main class="admin-main">
+            <!-- 상단 헤더 -->
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <h2>예약 상세 정보</h2>
+                    <p id="header-subtitle">예약 정보를 확인하고 관리하세요</p>
+                </div>
+                <div class="admin-header-right">
+                    <div class="admin-user-info">
+                        <div
+                            style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #009e72, #008260); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="admin-user-name">관리자</span>
+                    </div>
+                    <button class="admin-logout-btn">로그아웃</button>
+                </div>
+            </header>
+
+            <!-- 콘텐츠 영역 -->
+            <div class="admin-content">
+                <!-- 상단 액션 바 -->
+                <div class="detail-action-bar">
+                    <div class="detail-action-left">
+                        <button class="btn btn-secondary" onclick="goBack()">
+                            <i class="fas fa-arrow-left"></i> 돌아가기
+                        </button>
+                        <span class="detail-booking-id" id="detail-booking-id">#BK001</span>
+                    </div>
+                    <div class="detail-action-right">
+                        <span class="detail-status-badge" id="detail-status-badge">
+                            <span class="status-badge status-confirmed">확정됨</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 예약 정보 카드 -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>예약 정보</h3>
+                        <div class="detail-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="editBooking()">
+                                <i class="fas fa-edit"></i> 수정
+                            </button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteBooking()">
+                                <i class="fas fa-trash"></i> 삭제
+                            </button>
+                        </div>
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-info-grid">
+                            <!-- 예약번호 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">예약번호</label>
+                                <p class="detail-info-value" id="info-booking-id">#BK001</p>
+                            </div>
+
+                            <!-- 상태 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">상태</label>
+                                <p class="detail-info-value" id="info-booking-status">확정됨</p>
+                            </div>
+
+                            <!-- 결제 상태 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">결제 상태</label>
+                                <p class="detail-info-value" id="info-payment-status">완료</p>
+                            </div>
+
+                            <!-- 예약일시 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">예약일시</label>
+                                <p class="detail-info-value" id="info-booking-date">2025-01-10 14:30</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 고객 정보 카드 -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>고객 정보</h3>
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-info-grid">
+                            <!-- 고객명 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">고객명</label>
+                                <p class="detail-info-value" id="info-customer-name">김철수</p>
+                            </div>
+
+                            <!-- 연락처 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">연락처</label>
+                                <p class="detail-info-value">
+                                    <a href="tel:" id="info-customer-phone" class="detail-link">010-1234-5678</a>
+                                </p>
+                            </div>
+
+                            <!-- 이메일 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">이메일</label>
+                                <p class="detail-info-value">
+                                    <a href="mailto:" id="info-customer-email" class="detail-link">kim@example.com</a>
+                                </p>
+                            </div>
+
+                            <!-- 인원수 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">인원수</label>
+                                <p class="detail-info-value" id="info-guests">4명</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 숙박 정보 카드 -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>숙박 정보</h3>
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-info-grid">
+                            <!-- 숙박 구역 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">숙박 구역</label>
+                                <p class="detail-info-value" id="info-room-type">캠핑존 A</p>
+                            </div>
+
+                            <!-- 체크인 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">체크인</label>
+                                <p class="detail-info-value" id="info-checkin-date">2025-01-15</p>
+                            </div>
+
+                            <!-- 체크아웃 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">체크아웃</label>
+                                <p class="detail-info-value" id="info-checkout-date">2025-01-17</p>
+                            </div>
+
+                            <!-- 숙박일수 -->
+                            <div class="detail-info-group">
+                                <label class="detail-info-label">숙박일수</label>
+                                <p class="detail-info-value" id="info-nights">2박</p>
+                            </div>
+                        </div>
+
+                        <!-- 날짜 시각화 -->
+                        <div class="detail-date-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker check-in">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="timeline-label">체크인</p>
+                                    <p class="timeline-date" id="timeline-checkin">2025-01-15</p>
+                                </div>
+                            </div>
+                            <div class="timeline-divider"></div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker check-out">
+                                    <i class="fas fa-arrow-left"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="timeline-label">체크아웃</p>
+                                    <p class="timeline-date" id="timeline-checkout">2025-01-17</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 요금 정보 카드 -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>요금 정보</h3>
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-price-breakdown">
+                            <div class="price-item">
+                                <span class="price-label">1박 기본 요금</span>
+                                <span class="price-value" id="price-base">225,000원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">숙박일수</span>
+                                <span class="price-value" id="price-nights">2박</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">소계</span>
+                                <span class="price-value" id="price-subtotal">450,000원</span>
+                            </div>
+                            <div class="price-divider"></div>
+                            <div class="price-item total">
+                                <span class="price-label">총 요금</span>
+                                <span class="price-value" id="price-total">450,000원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 특별 요청사항 카드 -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>특별 요청사항</h3>
+                        <button class="btn btn-sm btn-primary" onclick="editNotes()">
+                            <i class="fas fa-edit"></i> 수정
+                        </button>
+                    </div>
+                    <div class="detail-card-body">
+                        <div class="detail-notes">
+                            <p id="notes-content">특별한 요청사항이 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 액션 버튼 그룹 -->
+                <div class="detail-action-group">
+                    <button class="btn btn-secondary" onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> 목록으로 돌아가기
+                    </button>
+                    <button class="btn btn-primary" onclick="editBooking()">
+                        <i class="fas fa-edit"></i> 예약 수정
+                    </button>
+                    <button class="btn btn-success" id="confirm-btn" onclick="confirmBooking()" style="display: none;">
+                        <i class="fas fa-check"></i> 예약 확정
+                    </button>
+                    <button class="btn btn-warning" id="checkin-btn" onclick="checkInBooking()">
+                        <i class="fas fa-sign-in-alt"></i> 체크인 처리
+                    </button>
+                    <button class="btn btn-danger" onclick="cancelBooking()">
+                        <i class="fas fa-ban"></i> 예약 취소
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 토스트 알림 컨테이너 -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // 샘플 예약 데이터
+        const bookingsDatabase = {
+            '#BK001': {
+                id: '#BK001',
+                name: '김철수',
+                phone: '010-1234-5678',
+                email: 'kim@example.com',
+                zone: '캠핑존 A',
+                checkin: '2025-01-15',
+                checkout: '2025-01-17',
+                guests: 4,
+                nights: 2,
+                price: '450,000원',
+                basePrice: '225,000원',
+                status: 'confirmed',
+                payment: '완료',
+                bookingDate: '2025-01-10 14:30',
+                notes: '아이가 있으니 조용한 위치 부탁합니다. 헤어드라이기 필요합니다.'
+            },
+            '#BK002': {
+                id: '#BK002',
+                name: '이영희',
+                phone: '010-2345-6789',
+                email: 'lee@example.com',
+                zone: '캠핑존 B',
+                checkin: '2025-01-18',
+                checkout: '2025-01-20',
+                guests: 3,
+                nights: 2,
+                price: '400,000원',
+                basePrice: '200,000원',
+                status: 'pending',
+                payment: '미완료',
+                bookingDate: '2025-01-11 10:15',
+                notes: '특별한 요청사항이 없습니다.'
+            },
+            '#BK003': {
+                id: '#BK003',
+                name: '박준호',
+                phone: '010-3456-7890',
+                email: 'park@example.com',
+                zone: '펜션',
+                checkin: '2025-01-21',
+                checkout: '2025-01-23',
+                guests: 5,
+                nights: 2,
+                price: '500,000원',
+                basePrice: '250,000원',
+                status: 'completed',
+                payment: '완료',
+                bookingDate: '2025-01-12 09:45',
+                notes: '생일 파티를 예정 중입니다. 케이크 준비 부탁합니다.'
+            }
+        };
+
+        let currentBookingId = '';
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeDetail();
+        });
+
+        function initializeDetail() {
+            // URL 파라미터에서 예약번호 가져오기
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookingId = urlParams.get('id') || '#BK001';
+
+            currentBookingId = bookingId;
+            loadBookingDetail(bookingId);
+        }
+
+        function loadBookingDetail(bookingId) {
+            const booking = bookingsDatabase[bookingId];
+
+            if (!booking) {
+                showToast('error', '예약 정보를 찾을 수 없습니다.');
+                return;
+            }
+
+            // 상단 정보
+            document.getElementById('detail-booking-id').textContent = booking.id;
+            document.getElementById('header-subtitle').textContent = `${booking.name} 고객의 예약 정보`;
+
+            // 상태 배지
+            const statusBadge = getStatusBadge(booking.status);
+            document.getElementById('detail-status-badge').innerHTML = statusBadge;
+
+            // 예약 정보
+            document.getElementById('info-booking-id').textContent = booking.id;
+            document.getElementById('info-booking-status').textContent = getStatusText(booking.status);
+            document.getElementById('info-payment-status').textContent = booking.payment;
+            document.getElementById('info-booking-date').textContent = booking.bookingDate;
+
+            // 고객 정보
+            document.getElementById('info-customer-name').textContent = booking.name;
+            const phoneLink = document.getElementById('info-customer-phone');
+            phoneLink.textContent = booking.phone;
+            phoneLink.href = `tel:${booking.phone}`;
+            const emailLink = document.getElementById('info-customer-email');
+            emailLink.textContent = booking.email;
+            emailLink.href = `mailto:${booking.email}`;
+            document.getElementById('info-guests').textContent = booking.guests + '명';
+
+            // 숙박 정보
+            document.getElementById('info-room-type').textContent = booking.zone;
+            document.getElementById('info-checkin-date').textContent = booking.checkin;
+            document.getElementById('info-checkout-date').textContent = booking.checkout;
+            document.getElementById('info-nights').textContent = booking.nights + '박';
+
+            // 타임라인
+            document.getElementById('timeline-checkin').textContent = booking.checkin;
+            document.getElementById('timeline-checkout').textContent = booking.checkout;
+
+            // 요금 정보
+            document.getElementById('price-base').textContent = booking.basePrice;
+            document.getElementById('price-nights').textContent = booking.nights + '박';
+            document.getElementById('price-subtotal').textContent = booking.price;
+            document.getElementById('price-total').textContent = booking.price;
+
+            // 특별 요청사항
+            const notesContent = booking.notes || '특별한 요청사항이 없습니다.';
+            document.getElementById('notes-content').textContent = notesContent;
+
+            // 상태에 따른 버튼 표시
+            updateActionButtons(booking.status);
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': '대기 중',
+                'confirmed': '확정됨',
+                'completed': '완료됨',
+                'cancelled': '취소됨'
+            };
+            return statusMap[status] || '알 수 없음';
+        }
+
+        function getStatusBadge(status) {
+            const statusMap = {
+                'pending': '<span class="status-badge status-pending">대기 중</span>',
+                'confirmed': '<span class="status-badge status-confirmed">확정됨</span>',
+                'completed': '<span class="status-badge status-completed">완료됨</span>',
+                'cancelled': '<span class="status-badge status-cancelled">취소됨</span>'
+            };
+            return statusMap[status] || '<span class="status-badge">알 수 없음</span>';
+        }
+
+        function updateActionButtons(status) {
+            const confirmBtn = document.getElementById('confirm-btn');
+            const checkinBtn = document.getElementById('checkin-btn');
+
+            // 대기 중이면 확정 버튼 표시
+            if (status === 'pending') {
+                confirmBtn.style.display = 'block';
+            } else {
+                confirmBtn.style.display = 'none';
+            }
+
+            // 완료됨이면 체크인 버튼 숨김
+            if (status === 'completed') {
+                checkinBtn.style.display = 'none';
+            } else {
+                checkinBtn.style.display = 'block';
+            }
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function editBooking() {
+            showToast('info', '예약 수정 기능은 개발 중입니다.');
+        }
+
+        function editNotes() {
+            const notes = bookingsDatabase[currentBookingId].notes;
+            const newNotes = prompt('특별 요청사항을 입력하세요:', notes);
+
+            if (newNotes !== null) {
+                bookingsDatabase[currentBookingId].notes = newNotes;
+                document.getElementById('notes-content').textContent = newNotes || '특별한 요청사항이 없습니다.';
+                showToast('success', '특별 요청사항이 저장되었습니다.');
+            }
+        }
+
+        function confirmBooking() {
+            if (confirm('이 예약을 확정하시겠습니까?')) {
+                bookingsDatabase[currentBookingId].status = 'confirmed';
+                loadBookingDetail(currentBookingId);
+                showToast('success', '예약이 확정되었습니다.');
+            }
+        }
+
+        function checkInBooking() {
+            const booking = bookingsDatabase[currentBookingId];
+            const today = new Date().toISOString().split('T')[0];
+
+            if (booking.checkin !== today) {
+                showToast('warning', `체크인 날짜는 ${booking.checkin}입니다.`);
+                return;
+            }
+
+            if (confirm('체크인 처리를 하시겠습니까?')) {
+                booking.status = 'completed';
+                loadBookingDetail(currentBookingId);
+                showToast('success', '체크인 처리가 완료되었습니다.');
+            }
+        }
+
+        function cancelBooking() {
+            if (confirm('정말 이 예약을 취소하시겠습니까?\n\n취소 후에는 복구할 수 없습니다.')) {
+                bookingsDatabase[currentBookingId].status = 'cancelled';
+                loadBookingDetail(currentBookingId);
+                showToast('success', '예약이 취소되었습니다.');
+            }
+        }
+
+        function deleteBooking() {
+            if (confirm('정말 이 예약을 삭제하시겠습니까?\n\n삭제 후에는 복구할 수 없습니다.')) {
+                delete bookingsDatabase[currentBookingId];
+                showToast('success', '예약이 삭제되었습니다.');
+                setTimeout(() => {
+                    window.history.back();
+                }, 1500);
+            }
+        }
+
+        function showToast(type, message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            const iconMap = {
+                'success': 'fa-check-circle',
+                'error': 'fa-exclamation-circle',
+                'warning': 'fa-exclamation-triangle',
+                'info': 'fa-info-circle'
+            };
+
+            toast.innerHTML = `
+                <i class="fas ${iconMap[type]} toast-icon"></i>
+                <span class="toast-message">${message}</span>
+                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
