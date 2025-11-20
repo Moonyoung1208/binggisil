@@ -24,8 +24,9 @@ img {
 html,
 body {
     font-size: 14px;
-    font-family: 'GmarketSans';
+    font-family: 'GmarketSans', sans-serif;
     font-weight: 200;
+    background-color: #fafafa;
 }
 
 button,
@@ -292,7 +293,8 @@ a.btn,
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    padding: 60px 20px;
 }
 
 .login-container {
@@ -396,6 +398,8 @@ a.btn,
 }
 
 .login-btn {
+    display: block;
+    text-align: center;
     width: 100%;
     padding: 14px;
     background: var(--green);

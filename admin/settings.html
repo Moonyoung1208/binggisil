@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 대시보드 - 달빛고운 병곡 캠핑장</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/schedule.css">
+
+    <script src="./js/script.js" defer></script>
+    <style>
+        .setting {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 모바일 토글 버튼 -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars" id="menuOpen"></i>
+        <i class="fa-solid fa-xmark" id="menuClose"></i>
+    </button>
+
+    <!-- 사이드바 오버레이 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏕️ 예약 관리</h2>
+            <p>달빛고운 병곡 캠핑장</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">대시보드</a></li>
+            <li><a href="calendar.html">예약 달력</a></li>
+            <li><a href="bookings.html"> 예약 목록</a></li>
+            <li><a href="settings.html" class="active">비밀번호 변경</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div class="admin-details">
+                    <span id="adminName">관리자</span>
+                    <small>admin@binggisil.com</small>
+                </div>
+            </div>
+            <a href="#" class="logout-btn"> 로그아웃 </a>
+        </div>
+    </aside>
+
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1>관리자 비밀번호 변경하기</h1>
+        </div>
+        <section>
+
+            <h2>비밀번호 변경</h2>
+            <form action="">
+
+                <div class="setting">
+                    <div class="form-group">
+                        <label for="password">기존 비밀번호</label>
+                        <input type="password" name="password" id="password" placeholder="기존 비밀번호를 입력하세요." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">새 비밀번호</label>
+                        <input type="password" name="pw_new" id="pw_new" placeholder="새 비밀번호를 입력하세요." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">비밀번호 확인</label>
+                        <input type="password" name="pw_confirm" id="pw_confirm" placeholder="비밀번호를 다시 입력하세요." required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <input type="submit" value="수정" id="pw_eidt" class="btn btn-primary">
+                    <a href="./dashboard.html" class="btn btn-cancel">취소</a>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+</body>
+
+</html>

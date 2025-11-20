@@ -49,6 +49,8 @@
     font-family: 'GmarketSans';
     transition: all 0.2s;
     font-weight: 200;
+    color: #666 !important;
+    background: #fff;
 }
 
 .form-group input:focus,
@@ -62,6 +64,14 @@
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: #999;
+}
+
+/* 모바일 */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 /* 입력 그룹 (단위 표시) */
