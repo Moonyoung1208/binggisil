@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 상세 정보 - 관리자</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/booking-detail.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- 모바일 토글 버튼 -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars" id="menuOpen"></i>
+        <i class="fa-solid fa-xmark" id="menuClose"></i>
+    </button>
+
+    <!-- 사이드바 오버레이 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏕️ 예약 관리</h2>
+            <p>달빛고운 병곡 캠핑장</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="active">대시보드</a></li>
+            <li><a href="calendar.html">예약 달력</a></li>
+            <li><a href="bookings.html"> 예약 목록</a></li>
+            <li><a href="settings.html">설정</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div class="admin-details">
+                    <span id="adminName">관리자</span>
+                    <small>admin@binggisil.com</small>
+                </div>
+            </div>
+            <a href="#" class="logout-btn"> 로그아웃 </a>
+        </div>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1>예약 상세 정보</h1>
+            <div class="top-bar-actions">
+                <a href="./bookings.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    목록으로
+                </a>
+            </div>
+        </div>
+
+        <!-- 예약 상세 정보 -->
+        <div class="detail-container">
+
+            <!-- 예약 기본 정보 -->
+            <div class="detail-section">
+                <div class="section-header">
+                    <h2>
+                        <i class="fa-solid fa-circle-info"></i>
+                        예약 기본 정보
+                    </h2>
+                    <span class="status-badge confirmed">확정</span>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>예약번호</label>
+                        <div class="info-value booking-number">BK-2024-001234</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>예약일시</label>
+                        <div class="info-value">2024년 12월 01일 14:30</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>예약 상태</label>
+                        <div class="info-value">
+                            <select class="status-select">
+                                <option value="confirmed" selected>확정</option>
+                                <option value="pending">대기</option>
+                                <option value="completed">완료</option>
+                                <option value="cancelled">취소</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>결제 상태</label>
+                        <div class="info-value">
+                            <span class="payment-badge paid">결제완료</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="height:40px;" class="divider"></div>
+
+                <!-- 고객 정보 -->
+                <div class="section-header">
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        고객 정보
+                    </h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>예약자명</label>
+                        <div class="info-value">김예약</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>연락처</label>
+                        <div class="info-value">010-1234-5678</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>이메일</label>
+                        <div class="info-value">kim@example.com</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>인원</label>
+                        <div class="info-value">성인 3명 / 어린이 1명</div>
+                    </div>
+                </div>
+
+                <div style="height:40px;"></div>
+
+                <!-- 숙박 정보 -->
+                <div class="section-header">
+                    <h2>
+                        <i class="fa-solid fa-bed"></i>
+                        숙박 정보
+                    </h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>객실 유형</label>
+                        <div class="info-value">캠핑장 A-1</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>체크인</label>
+                        <div class="info-value highlight">2024년 12월 15일 (일) 14:00</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>체크아웃</label>
+                        <div class="info-value highlight">2024년 12월 17일 (화) 11:00</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>숙박 기간</label>
+                        <div class="info-value">2박 3일</div>
+                    </div>
+                </div>
+
+                <!-- divider -->
+                <div style="height:40px;"></div>
+
+                <!-- 결제 정보 -->
+                <div class="section-header">
+                    <h2>
+                        <i class="fa-solid fa-credit-card"></i>
+                        결제 정보
+                    </h2>
+                </div>
+
+                <div class="payment-details">
+                    <div class="payment-row">
+                        <span>기본 요금</span>
+                        <span>280,000원</span>
+                    </div>
+                    <div class="payment-row">
+                        <span>추가 인원 요금</span>
+                        <span>20,000원</span>
+                    </div>
+                    <div class="payment-row discount">
+                        <span>연박 할인</span>
+                        <span>- 0원</span>
+                    </div>
+                    <div class="payment-row total">
+                        <span>총 결제 금액</span>
+                        <span>300,000원</span>
+                    </div>
+                </div>
+
+                <div class="payment-method">
+                    <div class="info-item">
+                        <label>결제 방법</label>
+                        <div class="info-value">신용카드</div>
+                    </div>
+                    <div class="info-item">
+                        <label>결제 일시</label>
+                        <div class="info-value">2024년 12월 01일 14:32</div>
+                    </div>
+                </div>
+
+                <div style="height: 40px;"></div>
+
+                <!-- 특이사항 -->
+                <div class="section-header">
+                    <h2>
+                        <i class="fa-solid fa-clipboard"></i>
+                        요청사항
+                    </h2>
+                </div>
+
+                <div class="memo-box">
+                    <p>조용한 구역으로 배정 부탁드립니다. 아이가 있어서 안전한 곳으로 부탁드립니다.</p>
+                </div>
+                <!-- 액션 버튼 -->
+                <div class="action-btns">
+                    <a href="#" class="btn btn-approve">
+                        입금 완료
+                    </a>
+                    <a href="#" class="btn btn-cancel">
+                        예약 취소
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

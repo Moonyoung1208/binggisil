@@ -4,402 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약 관리 - 빙기실 치유 마을 관리자 페이지</title>
+    <title>관리자 로그인 - 달빛고운 병곡 캠핑장</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Admin CSS -->
-    <link rel="stylesheet" href="./css/admin.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
 </head>
 
 <body>
-    <div class="admin-container">
-        <!-- 사이드바 -->
-        <aside class="admin-sidebar">
-            <div class="admin-sidebar-header">
-                <h1>빙기실</h1>
-                <p>관리자 시스템</p>
+    <div class="login">
+        <div class="login-container">
+            <div class="login-header">
+                <i class="xi-lock-o"></i>
+                <h1>관리자 로그인</h1>
+                <p>빙기실 캠핑장 예약 관리 시스템</p>
             </div>
 
-            <ul class="admin-sidebar-menu">
-                <li>
-                    <a href="./index.html">
-                        <i class="fas fa-home"></i>
-                        대시보드
+            <div class="login-body">
+                <div class="alert alert-error" id="alertBox"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">아이디</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="username" name="username" placeholder="관리자 아이디를 입력하세요" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">비밀번호</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        로그인
+                    </button>
+                </form>
+
+                <div class="back-to-site">
+                    <a href="http://binggisil.com/">
+                        <i class="xi-arrow-left"></i>
+                        메인 사이트로 돌아가기
                     </a>
-                </li>
-                <li class="open">
-                    <a href="./booking.html">
-                        <i class="fas fa-calendar-check"></i>
-                        예약 관리
-                    </a>
-                </li>
-                <li>
-                    <a href="./setting.html">
-                        <i class="fas fa-cog"></i>
-                        설정
-                    </a>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- 메인 콘텐츠 -->
-        <main class="admin-main">
-            <!-- 상단 헤더 -->
-            <header class="admin-header">
-                <div class="admin-header-left">
-                    <h2>예약 관리 대시보드</h2>
-                    <p>예약 상황을 한눈에 파악하고 관리하세요</p>
                 </div>
-                <div class="admin-header-right">
-                    <div class="admin-user-info">
-                        <div
-                            style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #009e72, #008260); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <span class="admin-user-name">관리자</span>
-                    </div>
-                    <button class="admin-logout-btn">로그아웃</button>
-                </div>
-            </header>
-
-            <!-- 콘텐츠 영역 -->
-            <div class="admin-content">
-                <!-- 대시보드 헤더 -->
-                <div class="dashboard-header">
-                    <h1 class="dashboard-title">예약 현황</h1>
-                    <p class="dashboard-subtitle">2025년 1월 현재 예약 통계입니다</p>
-                </div>
-
-                <!-- 통계 카드 -->
-                <div class="stats-grid">
-                    <div class="stats-grid-item">
-                        <span class="stats-value">248</span>
-                        <span class="stats-label">전체 예약</span>
-                    </div>
-                    <div class="stats-grid-item pending">
-                        <span class="stats-value">42</span>
-                        <span class="stats-label">대기 중</span>
-                    </div>
-                    <div class="stats-grid-item completed">
-                        <span class="stats-value">186</span>
-                        <span class="stats-label">확정됨</span>
-                    </div>
-                    <div class="stats-grid-item cancelled">
-                        <span class="stats-value">20</span>
-                        <span class="stats-label">취소됨</span>
-                    </div>
-                </div>
-
-                <!-- 필터 섹션 -->
-                <div class="booking-filters">
-                    <div class="filter-row">
-                        <div class="filter-group">
-                            <label for="filter-status">상태</label>
-                            <select id="filter-status">
-                                <option value="">전체</option>
-                                <option value="pending">대기 중</option>
-                                <option value="confirmed">확정됨</option>
-                                <option value="completed">완료됨</option>
-                                <option value="cancelled">취소됨</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="filter-room">숙박 타입</label>
-                            <select id="filter-room">
-                                <option value="">전체</option>
-                                <option value="camp-a">캠핑존A</option>
-                                <option value="camp-b">캠핑존B</option>
-                                <option value="reserve-site">예비사이트</option>
-                                <option value="pension">펜션</option>
-                                <option value="guesthouse">민박</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label for="filter-date-from">검색 기간</label>
-                            <input type="date" id="filter-date-from">
-                        </div>
-                        <div class="filter-group">
-                            <label for="filter-date-to"></label>
-                            <input type="date" id="filter-date-to">
-                        </div>
-                        <div class="filter-buttons">
-                            <button class="btn btn-primary">
-                                <i class="fas fa-search"></i> 검색
-                            </button>
-                            <button class="btn btn-secondary">
-                                <i class="fas fa-redo"></i> 초기화
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 예약 테이블 -->
-                <div class="booking-section">
-                    <div class="booking-header">
-                        <h2>예약 목록</h2>
-                        <span class="booking-count">총 248건</span>
-                    </div>
-
-                    <div class="table-responsive">
-                        <table class="booking-table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 80px;">예약번호</th>
-                                    <th style="width: 100px;">고객명</th>
-                                    <th style="width: 120px;">연락처</th>
-                                    <th style="width: 100px;">숙박 타입</th>
-                                    <th style="width: 100px;">체크인</th>
-                                    <th style="width: 100px;">체크아웃</th>
-                                    <th style="width: 80px;">인원</th>
-                                    <th style="width: 80px;">요금</th>
-                                    <th style="width: 100px;">상태</th>
-                                    <th style="width: 120px;">관리</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- 예약 항목-->
-                                <tr>
-                                    <td>#BK001</td>
-                                    <td>김철수</td>
-                                    <td>010-1234-5678</td>
-                                    <td><span class="room-type-badge">캠핑 글램핑</span></td>
-                                    <td>2025-01-15</td>
-                                    <td>2025-01-17</td>
-                                    <td>4명</td>
-                                    <td>450,000원</td>
-                                    <td><span class="status-badge status-confirmed">확정됨</span></td>
-                                    <td>
-                                        <div class="booking-table-actions">
-                                            <button class="btn btn-primary btn-small" onclick="viewBooking('#BK001')">
-                                                보기
-                                            </button>
-                                            <button class="btn btn-danger btn-small">
-                                                삭제
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- 페이지네이션 -->
-                    <div class="pagination-wrapper">
-                        <ul class="pagination">
-                            <li><span class="disabled">← 이전</span></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#" class="active">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">다음 →</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- 예약 상세 보기 모달 -->
-    <div class="modal-overlay" id="bookingModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>예약 상세 정보</h3>
-                <button class="modal-close" onclick="closeModal()">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="booking-detail">
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">예약번호</span>
-                        <span class="booking-detail-value" id="modal-booking-id"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">상태</span>
-                        <span class="booking-detail-value" id="modal-booking-status"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">고객명</span>
-                        <span class="booking-detail-value" id="modal-customer-name"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">연락처</span>
-                        <span class="booking-detail-value" id="modal-customer-phone"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">이메일</span>
-                        <span class="booking-detail-value" id="modal-customer-email">example@email.com</span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">숙박 타입</span>
-                        <span class="booking-detail-value" id="modal-room-type"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">체크인</span>
-                        <span class="booking-detail-value" id="modal-checkin-date"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">체크아웃</span>
-                        <span class="booking-detail-value" id="modal-checkout-date"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">인원수</span>
-                        <span class="booking-detail-value" id="modal-guests"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">숙박일수</span>
-                        <span class="booking-detail-value" id="modal-nights"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">요금</span>
-                        <span class="booking-detail-value" id="modal-price"></span>
-                    </div>
-                    <div class="booking-detail-item">
-                        <span class="booking-detail-label">결제 상태</span>
-                        <span class="booking-detail-value" id="modal-payment-status">완료</span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="modal-notes" class="form-label">특별 요청사항</label>
-                    <textarea class="form-control" id="modal-notes" placeholder="고객의 특별 요청사항을 입력하세요"
-                        rows="4"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal()">닫기</button>
-                <button class="btn btn-primary" onclick="saveBooking()">
-                    <i class="fas fa-save"></i> 저장
-                </button>
-                <button class="btn btn-success" onclick="confirmBooking()">
-                    <i class="fas fa-check"></i> 확정
-                </button>
-                <button class="btn btn-danger" onclick="cancelBooking()">
-                    <i class="fas fa-ban"></i> 취소
-                </button>
             </div>
         </div>
     </div>
 
-    <!-- 토스트 알림 컨테이너 -->
-    <div class="toast-container" id="toastContainer"></div>
-
-    <script>
-
-        // 예약 상세 보기 함수
-        function viewBooking(bookingId) {
-            const modal = document.getElementById('bookingModal');
-
-            const data = bookingData[bookingId];
-
-            if (data) {
-                document.getElementById('modal-booking-id').textContent = data.id;
-                document.getElementById('modal-booking-status').textContent = data.status;
-                document.getElementById('modal-customer-name').textContent = data.name;
-                document.getElementById('modal-customer-phone').textContent = data.phone;
-                document.getElementById('modal-room-type').textContent = data.roomType;
-                document.getElementById('modal-checkin-date').textContent = data.checkin;
-                document.getElementById('modal-checkout-date').textContent = data.checkout;
-                document.getElementById('modal-guests').textContent = data.guests;
-                document.getElementById('modal-nights').textContent = data.nights;
-                document.getElementById('modal-price').textContent = data.price;
-            }
-
-            modal.classList.add('active');
-        }
-
-        // 모달 닫기
-        function closeModal() {
-            document.getElementById('bookingModal').classList.remove('active');
-        }
-
-        // 모달 외부 클릭 시 닫기
-        document.getElementById('bookingModal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // 예약 저장
-        function saveBooking() {
-            showToast('success', '예약 정보가 저장되었습니다.');
-            closeModal();
-        }
-
-        // 예약 확정
-        function confirmBooking() {
-            showToast('success', '예약이 확정되었습니다.');
-            closeModal();
-        }
-
-        // 예약 취소
-        function cancelBooking() {
-            if (confirm('정말 이 예약을 취소하시겠습니까?')) {
-                showToast('success', '예약이 취소되었습니다.');
-                closeModal();
-            }
-        }
-
-        // 토스트 알림 표시
-        function showToast(type, message) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = `toast toast-${type}`;
-
-            const iconMap = {
-                'success': 'fa-check-circle',
-                'error': 'fa-exclamation-circle',
-                'warning': 'fa-exclamation-triangle',
-                'info': 'fa-info-circle'
-            };
-
-            toast.innerHTML = `
-                <i class="fas ${iconMap[type]} toast-icon"></i>
-                <span class="toast-message">${message}</span>
-                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
-            `;
-
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                if (toast.parentElement) {
-                    toast.remove();
-                }
-            }, 3000);
-        }
-
-        // 검색 필터 기능
-        document.querySelector('.btn-primary').addEventListener('click', function () {
-            const status = document.getElementById('filter-status').value;
-            const room = document.getElementById('filter-room').value;
-            const dateFrom = document.getElementById('filter-date-from').value;
-            const dateTo = document.getElementById('filter-date-to').value;
-
-            console.log('검색 조건:', {
-                상태: status,
-                숙박타입: room,
-                시작날짜: dateFrom,
-                종료날짜: dateTo
-            });
-
-            showToast('info', '필터가 적용되었습니다.');
-        });
-
-        // 초기화 버튼
-        document.querySelectorAll('.btn-secondary')[document.querySelectorAll('.btn-secondary').length - 1].addEventListener('click', function () {
-            document.getElementById('filter-status').value = '';
-            document.getElementById('filter-room').value = '';
-            document.getElementById('filter-date-from').value = '';
-            document.getElementById('filter-date-to').value = '';
-            showToast('info', '필터가 초기화되었습니다.');
-        });
-
-    </script>
 </body>
 
 </html>

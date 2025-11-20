@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 대시보드 - 달빛고운 병곡 캠핑장</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- 모바일 토글 버튼 -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars" id="menuOpen"></i>
+        <i class="fa-solid fa-xmark" id="menuClose"></i>
+    </button>
+
+    <!-- 사이드바 오버레이 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏕️ 예약 관리</h2>
+            <p>달빛고운 병곡 캠핑장</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html" class="active">대시보드</a></li>
+            <li><a href="calendar.html">예약 달력</a></li>
+            <li><a href="bookings.html"> 예약 목록</a></li>
+            <li><a href="settings.html">설정</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div class="admin-details">
+                    <span id="adminName">관리자</span>
+                    <small>admin@binggisil.com</small>
+                </div>
+            </div>
+            <a href="#" class="logout-btn"> 로그아웃 </a>
+        </div>
+    </aside>
+
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1>빙기실 캠핑장 관리자</h1>
+            <div class="top-bar-actions">
+                <a href="./setting.html" class="btn btn-primary">설정</a>
+            </div>
+        </div>
+
+        <!-- 통계 카드 -->
+        <div class="stats-grid">
+            <div class="stat-card blue">
+                <div class="stat-card-header">
+                    <div class="stat-card-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                </div>
+                <div class="stat-card-value">48</div>
+                <div class="stat-card-label">이번 달 예약</div>
+                <div class="stat-card-change up">
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-card-header">
+                    <div class="stat-card-icon">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                </div>
+                <div class="stat-card-value">42</div>
+                <div class="stat-card-label">확정된 예약</div>
+                <div class="stat-card-change up">
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-card-header">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                </div>
+                <div class="stat-card-value">6</div>
+                <div class="stat-card-label">대기중인 예약</div>
+                <div class="stat-card-change down">
+                </div>
+            </div>
+
+            <div class="stat-card red">
+                <div class="stat-card-header">
+                    <div class="stat-card-icon">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                </div>
+                <div class="stat-card-value">0</div>
+                <div class="stat-card-label">취소 된 예약</div>
+                <div class="stat-card-change up"></div>
+            </div>
+        </div>
+
+        <!-- 최근 예약 -->
+        <div class="recent-bookings">
+            <h3>
+                최근 예약
+                <a href="admin_bookings.html" class="view-all">전체보기 →</a>
+            </h3>
+
+            <!-- 최근 예약 1 -->
+            <div class="booking-item">
+                <div class="booking-info">
+                    <span class="booking-status confirmed">입금완료</span>
+                    <h4 class="booking-name">김예약</h4>
+                    <span class="booking-site">캠핑장 A-1</span>
+                    <p class="booking-date">2024.12.15 - 2024.12.17 (2박)</p>
+                    <p class="booking-num">010-0000-0000</p>
+                    <div class="booking-btns">
+                        <a href="#" class="btn btn-primary">입급완료</a>
+                        <a href="#" class="btn btn-cancel">예약취소</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 최근 예약 2 -->
+            <div class="booking-item">
+                <div class="booking-info">
+                    <span class="booking-status confirmed">입금완료</span>
+                    <h4 class="booking-name">김예약</h4>
+                    <span class="booking-site">캠핑장 A-1</span>
+                    <p class="booking-date">2024.12.15 - 2024.12.17 (2박)</p>
+                    <p class="booking-num">010-0000-0000</p>
+                    <div class="booking-btns">
+                        <a href="#" class="btn btn-primary">입급완료</a>
+                        <a href="#" class="btn btn-cancel">예약취소</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 최근 예약 3 -->
+            <div class="booking-item">
+                <div class="booking-info">
+                    <span class="booking-status pending">입금대기</span>
+                    <h4 class="booking-name">김예약</h4>
+                    <span class="booking-site">캠핑장 A-1</span>
+                    <p class="booking-date">2024.12.15 - 2024.12.17 (2박)</p>
+                    <p class="booking-num">010-0000-0000</p>
+                    <div class="booking-btns">
+                        <a href="#" class="btn btn-primary">입급완료</a>
+                        <a href="#" class="btn btn-cancel">예약취소</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 최근 예약 4 -->
+            <div class="booking-item">
+                <div class="booking-info">
+                    <span class="booking-status cancelled">예약취소</span>
+                    <h4 class="booking-name">김예약</h4>
+                    <span class="booking-site">캠핑장 A-1</span>
+                    <p class="booking-date">2024.12.15 - 2024.12.17 (2박)</p>
+                    <p class="booking-num">010-0000-0000</p>
+                    <div class="booking-btns">
+                        <a href="#" class="btn btn-primary">입급완료</a>
+                        <a href="#" class="btn btn-cancel">예약취소</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 최근 예약 5 -->
+            <div class="booking-item">
+                <div class="booking-info">
+                    <span class="booking-status pending">입금대기</span>
+                    <h4 class="booking-name">김예약</h4>
+                    <span class="booking-site">캠핑장 A-1</span>
+                    <p class="booking-date">2024.12.15 - 2024.12.17 (2박)</p>
+                    <p class="booking-num">010-0000-0000</p>
+                    <div class="booking-btns">
+                        <a href="#" class="btn btn-primary">입급완료</a>
+                        <a href="#" class="btn btn-cancel">예약취소</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

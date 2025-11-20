@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 목록 - 관리자</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/bookings.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- 모바일 토글 버튼 -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars" id="menuOpen"></i>
+        <i class="fa-solid fa-xmark" id="menuClose"></i>
+    </button>
+
+    <!-- 사이드바 오버레이 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏕️ 예약 관리</h2>
+            <p>달빛고운 병곡 캠핑장</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">대시보드</a></li>
+            <li><a href="calendar.html">예약 달력</a></li>
+            <li><a href="bookings.html" class="active">예약 목록</a></li>
+            <li><a href="settings.html">설정</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div class="admin-details">
+                    <span id="adminName">관리자</span>
+                    <small>admin@binggisil.com</small>
+                </div>
+            </div>
+            <a href="#" class="logout-btn"> 로그아웃 </a>
+        </div>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1>예약 목록</h1>
+            <div class="top-bar-actions">
+                <a href="./calendar.html" class="btn btn-primary">달력 보기</a>
+            </div>
+        </div>
+
+        <!-- 필터 및 검색 -->
+        <div class="filters-container">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>예약 상태</label>
+                    <select id="statusFilter">
+                        <option value="">전체</option>
+                        <option value="confirmed">확정</option>
+                        <option value="pending">대기</option>
+                        <option value="cancelled">취소</option>
+                        <option value="completed">완료</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>객실 유형</label>
+                    <select id="roomFilter">
+                        <option value="">전체</option>
+                        <option value="camping-a">캠핑장 A</option>
+                        <option value="camping-b">캠핑장 B</option>
+                        <option value="pension">펜션</option>
+                        <option value="minbak">민박</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>기간 (시작)</label>
+                    <input type="date" id="startDate">
+                </div>
+
+                <div class="filter-group">
+                    <label>기간 (종료)</label>
+                    <input type="date" id="endDate">
+                </div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="예약자명, 예약번호, 연락처로 검색...">
+                <a href="#" class="btn-search">검색</a>
+            </div>
+        </div>
+
+        <!-- 예약 목록 테이블 -->
+        <div class="table-container">
+            <div class="table-header">
+                <h3>전체 예약</h3>
+                <div class="table-stats">
+                    총 <strong>48건</strong> | 확정 <strong>42건</strong> | 대기 <strong>6건</strong>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>예약번호</th>
+                        <th>예약자명</th>
+                        <th>연락처</th>
+                        <th>객실</th>
+                        <th>체크인</th>
+                        <th>체크아웃</th>
+                        <th>인원</th>
+                        <th>금액</th>
+                        <th>상태</th>
+                        <th>관리</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingTableBody">
+                    <!-- 예약 내역 1 -->
+                    <tr>
+                        <td class="booking-id" data-label="예약번호">BK-2024-001234</td>
+                        <td data-label="예약자명">김예약</td>
+                        <td data-label="연락처">010-1234-5678</td>
+                        <td data-label="객실">캠핑장 A-1</td>
+                        <td data-label="체크인">2024-12-15</td>
+                        <td data-label="체크아웃">2024-12-17</td>
+                        <td data-label="인원">4명</td>
+                        <td data-label="금액">300,000원</td>
+                        <td data-label="상태"><span class="status-badge confirmed">확정</span></td>
+                        <td data-label="관리">
+                            <div class="action-btns">
+                                <a href="./booking-detail.html" class="btn-icon btn-view" title="상세보기">상세</a>
+                                <a href="#" class="btn-icon btn-edit" title="수정">수정</a>
+                                <a href="#" class="btn-icon btn-delete" title="취소">취소</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 예약 내역 2 -->
+                    <tr>
+                        <td class="booking-id" data-label="예약번호">BK-2024-001235</td>
+                        <td data-label="예약자명">이고객</td>
+                        <td data-label="연락처">010-2345-6789</td>
+                        <td data-label="객실">펜션</td>
+                        <td data-label="체크인">2024-12-20</td>
+                        <td data-label="체크아웃">2024-12-22</td>
+                        <td data-label="인원">6명</td>
+                        <td data-label="금액">450,000원</td>
+                        <td data-label="상태"><span class="status-badge pending">대기</span></td>
+                        <td data-label="관리">
+                            <div class="action-btns">
+                                <a href="#" class="btn-icon btn-view" title="상세보기">상세</a>
+                                <a href="#" class="btn-icon btn-edit" title="수정">수정</a>
+                                <a href="#" class="btn-icon btn-delete" title="취소">취소</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 예약 내역 3 -->
+                    <tr>
+                        <td class="booking-id" data-label="예약번호">BK-2024-001236</td>
+                        <td data-label="예약자명">박여행</td>
+                        <td data-label="연락처">010-3456-7890</td>
+                        <td data-label="객실">캠핑장 B-2</td>
+                        <td data-label="체크인">2024-12-18</td>
+                        <td data-label="체크아웃">2024-12-19</td>
+                        <td data-label="인원">3명</td>
+                        <td data-label="금액">150,000원</td>
+                        <td data-label="상태"><span class="status-badge confirmed">확정</span></td>
+                        <td data-label="관리">
+                            <div class="action-btns">
+                                <a href="#" class="btn-icon btn-view" title="상세보기">상세</a>
+                                <a href="#" class="btn-icon btn-edit" title="수정">수정</a>
+                                <a href="#" class="btn-icon btn-delete" title="취소">취소</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 예약 내역 4 -->
+                    <tr>
+                        <td class="booking-id" data-label="예약번호">BK-2024-001237</td>
+                        <td data-label="예약자명">최캠핑</td>
+                        <td data-label="연락처">010-4567-8901</td>
+                        <td data-label="객실">민박</td>
+                        <td data-label="체크인">2024-12-25</td>
+                        <td data-label="체크아웃">2024-12-27</td>
+                        <td data-label="인원">5명</td>
+                        <td data-label="금액">350,000원</td>
+                        <td data-label="상태"><span class="status-badge confirmed">확정</span></td>
+                        <td data-label="관리">
+                            <div class="action-btns">
+                                <a href="#" class="btn-icon btn-view" title="상세보기">상세</a>
+                                <a href="#" class="btn-icon btn-edit" title="수정">수정</a>
+                                <a href="#" class="btn-icon btn-delete" title="취소">취소</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- 예약 내역 5  -->
+                    <tr>
+                        <td class="booking-id" data-label="예약번호">BK-2024-001238</td>
+                        <td data-label="예약자명">정힐링</td>
+                        <td data-label="연락처">010-5678-9012</td>
+                        <td data-label="객실">캠핑장 A-3</td>
+                        <td data-label="체크인">2024-12-10</td>
+                        <td data-label="체크아웃">2024-12-11</td>
+                        <td data-label="인원">2명</td>
+                        <td data-label="금액">150,000원</td>
+                        <td data-label="상태"><span class="status-badge cancelled">취소</span></td>
+                        <td data-label="관리">
+                            <div class="action-btns">
+                                <a href="#" class="btn-icon btn-view" title="상세보기">상세</a>
+                                <a href="#" class="btn-icon btn-edit" title="수정">수정</a>
+                                <a href="#" class="btn-icon btn-delete" title="취소">취소</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <ul>
+                    <li><i class="fa-solid fa-angles-left"></i></li>
+                    <li><i class="fa-solid fa-angle-left"></i></li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li><i class="fa-solid fa-angle-right"></i></li>
+                    <li><i class="fa-solid fa-angles-right"></i></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

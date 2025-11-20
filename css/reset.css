@@ -1,25 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 
-*{padding: 0; margin: 0;}
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-li{
+
+li {
     list-style: none;
 }
-img{
+
+img {
     display: block;
     max-width: 100%;
 }
-html,body{
+
+html,
+body {
     font-size: 14px;
     font-family: 'GmarketSans';
     font-weight: 200;
-    
+
 }
-.body_wrap{
+
+.body_wrap {
     /* overflow-x: hidden; */
 }
+
 @media screen and (max-width:860px) {
-html,body{font-size: 12px;}
+
+    html,
+    body {
+        font-size: 12px;
+    }
 }

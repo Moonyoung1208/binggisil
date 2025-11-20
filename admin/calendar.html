@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약 달력 - 관리자</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css ">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/calendar.css">
+
+    <script src="./js/script.js" defer></script>
+
+</head>
+
+<body>
+    <!-- 모바일 토글 버튼 -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars" id="menuOpen"></i>
+        <i class="fa-solid fa-xmark" id="menuClose"></i>
+    </button>
+
+    <!-- 사이드바 오버레이 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>🏕️ 예약 관리</h2>
+            <p>달빛고운 병곡 캠핑장</p>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">대시보드</a></li>
+            <li><a href="calendar.html" class="active">예약 달력</a></li>
+            <li><a href="bookings.html"> 예약 목록</a></li>
+            <li><a href="settings.html">설정</a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="admin-info">
+                <div class="admin-details">
+                    <span id="adminName">관리자</span>
+                    <small>admin@binggisil.com</small>
+                </div>
+            </div>
+            <a href="#" class="logout-btn"> 로그아웃 </a>
+        </div>
+    </aside>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="main-content">
+        <div class="top-bar">
+            <h1>예약 달력</h1>
+            <div class="top-bar-actions">
+                <a href="./bookings.html" class="btn btn-primary">예약 보기</a>
+            </div>
+        </div>
+
+        <div class="calendar" aria-label="월 달력">
+            <div class="calendar-header">
+                <button class="nav-btn" id="prevMonth"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="month-title" id="monthTitle">2025년 10월</div>
+                <button class="nav-btn" id="nextMonth"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+
+            <div class="dow" aria-hidden="true">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+
+            <div class="grid-7" id="calendarGrid" aria-live="polite">
+                <!-- 예시 날짜 -->
+                <div class="day other-month">
+                    <span class="date">29</span>
+                </div>
+                <div class="day other-month">
+                    <span class="date">30</span>
+                </div>
+                <div class="day">
+                    <span class="date">1</span>
+                    <a href="./schedule.html" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">2</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">3</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">4</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">5</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">6</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">7</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">8</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">9</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">10</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">11</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">12</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">13</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">14</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">15</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">16</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">17</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">18</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">19</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">20</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">21</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">22</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">23</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">24</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">25</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">26</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">27</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">28</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">29</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">30</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day">
+                    <span class="date">31</span>
+                    <a href="" class="schedule">일정 추가</a>
+                </div>
+                <div class="day other-month">
+                    <span class="date">1</span>
+                </div>
+                <div class="day other-month">
+                    <span class="date">2</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

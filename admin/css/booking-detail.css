@@ -1,0 +1,332 @@
+/* 예약 상세 정보 페이지 스타일 */
+
+/* 섹션 공통 스타일 */
+.detail-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-header i {
+    color: var(--green);
+    font-size: 20px;
+}
+
+/* 정보 그리드 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-item label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+}
+
+.info-value {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+.info-value.booking-number {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.info-value.highlight {
+    color: var(--green);
+    font-weight: 600;
+}
+
+/* 상태 배지 */
+.status-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-badge.confirmed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.completed {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* 결제 상태 배지 */
+.payment-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.payment-badge.paid {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.payment-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.payment-badge.refund {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* 상태 선택 */
+.status-select {
+    padding: 8px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+/* 결제 정보 */
+.payment-details {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-row:last-child {
+    border-bottom: none;
+}
+
+.payment-row.discount {
+    color: #ef4444;
+}
+
+.payment-row.total {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 2px solid #333;
+}
+
+.payment-method {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* 메모 박스 */
+.memo-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--green);
+    margin-bottom: 20px;
+}
+
+.memo-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 관리자 메모 */
+.admin-memo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-memo label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-memo label i {
+    color: var(--yellow);
+}
+
+.admin-memo textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'GmarketSans';
+    resize: vertical;
+    transition: all 0.2s;
+}
+
+.admin-memo textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+.save-memo-btn {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+/* 액션 섹션 */
+.action-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    
+}
+
+.btn-cancel {
+    background: #fee2e2;
+    color: #991b1b;
+    display: block;
+    width: fit-content;
+}
+
+.btn-cancel:hover {
+    background: #fecaca;
+}
+
+.btn-approve {
+    background: #d1fae5;
+    color: var(--green);
+}
+
+.btn-approve:hover {
+    background: #c2e9d5;
+}
+
+
+/* 반응형 */
+@media (max-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .payment-method {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .detail-section {
+        padding: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .top-bar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-section {
+        padding: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 16px;
+    }
+
+    .payment-row {
+        font-size: 13px;
+    }
+
+    .payment-row.total {
+        font-size: 16px;
+    }
+}

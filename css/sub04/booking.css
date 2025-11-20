@@ -163,6 +163,15 @@
     }
 }
 
+@media screen and (max-width:375px) {
+ .day {
+        max-width: 40px;
+        height: 120px;
+        padding: 2px;
+    }
+}
+
+
 /* ========================================
    공통 버튼 스타일
    ======================================== */
@@ -234,7 +243,7 @@
    공통 레이아웃
    ======================================== */
 
-.shortcut-button {
+.shortcut-btns {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -638,7 +647,6 @@
 
 .info-section {
     margin-bottom: 40px;
-    padding-bottom: 40px;
     border-bottom: 1px solid var(--light-border);
 }
 
@@ -770,11 +778,6 @@
     margin: 10px 0;
 }
 
-.reservation-number:hover {
-    background-color: var(--light-bg-3);
-    transform: scale(1.02);
-}
-
 .info-note {
     font-size: 0.85rem;
     color: var(--text-light);
@@ -787,6 +790,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-bottom: 15px;
+}
+
+.info-grid .info-box {
+    margin-bottom: 0;
 }
 
 .payment-details {
@@ -841,13 +848,6 @@
     color: var(--main-color);
 }
 
-.payment-method {
-    background-color: var(--light-bg-3);
-    border-left: 4px solid var(--main-color);
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
 .method-title {
     font-size: 0.95rem;
     font-weight: 600;
@@ -869,54 +869,11 @@
 
 .payment-notice p {
     margin: 0 0 10px 0;
-    font-weight: 600;
     color: var(--text-dark);
 }
 
-.payment-notice ul {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.payment-notice li {
-    font-size: 0.9rem;
-    color: var(--text-gray);
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-.next-step {
-    background: linear-gradient(135deg, var(--light-bg-3) 0%, #f0f9f7 100%);
-    border: 2px dashed var(--main-color);
-    padding: 25px;
-    text-align: center;
-    margin: 30px 0;
-}
-
-.step-icon {
-    font-size: 2.5rem;
-    color: var(--main-color);
-    margin-bottom: 12px;
-}
-
-.step-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 8px;
-}
-
-.step-desc {
-    font-size: 0.95rem;
-    color: var(--text-gray);
-    margin: 0;
-}
-
-.completion-buttons {
-    display: flex;
-    gap: 15px;
-    margin: 30px 0;
-    justify-content: center;
+.payment-notice p span {
+    font-weight: normal;
 }
 
 .additional-info {
@@ -1052,13 +1009,6 @@
 .breakdown-item.total .breakdown-value {
     font-size: 1.3rem;
     color: var(--main-color);
-}
-
-.payment-method-box {
-    background-color: var(--light-bg-2);
-    border: 1px solid var(--light-border);
-    padding: 25px;
-    margin-bottom: 30px;
 }
 
 .method-info {
@@ -1249,40 +1199,6 @@
     padding: 15px;
     text-align: center;
     border: 1px solid var(--main-color);
-}
-
-.step-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background-color: var(--main-color);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.step-content strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    margin-bottom: 5px;
-}
-
-.step-content p {
-    font-size: 0.85rem;
-    color: var(--text-gray);
-    margin: 0;
-    line-height: 1.4;
-}
-
-.payment-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-    justify-content: center;
 }
 
 .payment-faq {
@@ -1529,10 +1445,6 @@
         justify-content: center;
     }
 
-    .next-step {
-        padding: 20px;
-    }
-
     .step-icon {
         font-size: 2rem;
     }
@@ -1669,11 +1581,6 @@
         font-size: 0.85rem;
     }
 
-    .next-step {
-        padding: 15px;
-        margin: 20px 0;
-    }
-
     .step-icon {
         font-size: 1.8rem;
     }
@@ -1769,10 +1676,6 @@
         font-size: 1.1rem;
     }
 
-    .payment-method-box {
-        padding: 15px;
-    }
-
     .method-info {
         padding: 15px;
         gap: 12px;
@@ -1807,13 +1710,13 @@
     }
 
     .account-number {
+        width: 60%;
         padding: 6px 10px;
         font-size: 0.85rem;
     }
 
     .copy-btn {
         padding: 6px 12px;
-        font-size: 0.8rem;
     }
 
     .account-notice {
@@ -1854,6 +1757,7 @@
     }
 
     .step-number {
+        float: left;
         width: 30px;
         height: 30px;
         font-size: 0.9rem;
@@ -1976,11 +1880,14 @@
     }
 
     .process {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         gap: 8px;
     }
 
     .process li {
+        flex: initial;
         padding: 10px;
         font-size: 0.9rem;
     }
@@ -2153,11 +2060,6 @@
         font-size: 1.1rem;
     }
 
-    .payment-method {
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
     .method-title {
         font-size: 0.9rem;
         margin-bottom: 6px;
@@ -2178,11 +2080,6 @@
     .payment-notice li {
         font-size: 0.8rem;
         margin-bottom: 4px;
-    }
-
-    .next-step {
-        padding: 12px;
-        margin: 15px 0;
     }
 
     .step-icon {
@@ -2270,13 +2167,14 @@
     }
 
     .account-number {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         padding: 5px 8px;
     }
 
     .copy-btn {
+        width: 40%;
         padding: 5px 10px;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
     }
 
     .guide-steps {
@@ -2384,7 +2282,7 @@
 
     .process li {
         padding: 8px;
-        font-size: 0.65rem;
+        font-size: 1.125rem;
     }
 
     .input-group label,
@@ -2472,29 +2370,8 @@
         font-size: 1rem;
     }
 
-    .payment-method {
-        padding: 10px;
-    }
-
     .payment-notice p,
     .payment-notice li {
-        font-size: 0.8rem;
-    }
-
-    .next-step {
-        padding: 10px;
-        margin: 12px 0;
-    }
-
-    .step-icon {
-        font-size: 1.3rem;
-    }
-
-    .step-title {
-        font-size: 0.95rem;
-    }
-
-    .step-desc {
         font-size: 0.8rem;
     }
 
@@ -2573,12 +2450,7 @@
         font-size: 0.85rem;
     }
 
-    .account-number {
-        font-size: 0.75rem;
-    }
-
     .copy-btn {
-        font-size: 0.7rem;
         padding: 4px 8px;
     }
 
@@ -2588,20 +2460,6 @@
 
     .guide-title {
         font-size: 0.95rem;
-    }
-
-    .step-number {
-        width: 25px;
-        height: 25px;
-        font-size: 0.8rem;
-    }
-
-    .step-content strong {
-        font-size: 0.85rem;
-    }
-
-    .step-content p {
-        font-size: 0.75rem;
     }
 
     .support-item {

@@ -29,7 +29,7 @@
 
 <body>
     <!-- header -->
-    <a? include "../header.html" ?>
+    <? include "../header.html" ?>
         <!-- //header -->
 
         <div class="sub">
@@ -122,10 +122,10 @@
                                         <label for="room-type">숙소 종류 <span class="required">*</span></label>
                                         <select id="room-type" name="room-type" required>
                                             <option value="">선택하세요</option>
-                                            <option value="glamping">글래핑</option>
-                                            <option value="caravan">카라반</option>
-                                            <option value="tent">텐트</option>
-                                            <option value="cabin">캐빈</option>
+                                            <option value="glamping">캠핑장 A</option>
+                                            <option value="caravan">캠핑장 B</option>
+                                            <option value="tent">펜션</option>
+                                            <option value="cabin">민박</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -145,10 +145,10 @@
                                     <label for="rooms">객실 선택 <span class="required">*</span></label>
                                     <select id="rooms" name="rooms" required>
                                         <option value="">선택하세요</option>
-                                        <option value="room1">305호 - 글래핑 (4인)</option>
-                                        <option value="room2">306호 - 글래핑 (4인)</option>
-                                        <option value="room3">307호 - 카라반 (6인)</option>
-                                        <option value="room4">308호 - 캐빈 (2인)</option>
+                                        <option value="A-1">캠핑장 A-1</option>
+                                        <option value="A-2">캠핑장 A-2</option>
+                                        <option value="A-3">캠핑장 A-3</option>
+                                        <option value="A-4">캠핑장 A-4</option>
                                     </select>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                         <p>숙소: <span id="selected-room">-</span></p>
                     </div>
                     <!-- 다음페이지 이동 버튼 -->
-                    <div class="shortcut-button">
+                    <div class="shortcut-btns">
                         <a href="./booking2.html" class="btn-next">다음 단계</a>
                     </div>
                 </div>
